@@ -90,32 +90,7 @@ class MVG_classifier:
     
     def getPredictions(self, DTE): return np.argmax(self.getPosteriors(DTE), axis= 0)
 
-def Gaussian_Classifier_new(DTR, LTR, DTE, args_in= {}):
-
-    args = {'log': True, 'priors': False, 'version': 'base', 'retPosteriors': False}
-    for key in args_in.keys():
-        args[key] = args_in[key]
-
-    mu, C = multiclass_MVG_estimate(DTR, LTR, version= args['version'])
-    
-    if not args['log']:
-        S = multiclass_likelihood(DTE, mu, C, log_pdf_MVG)
-        S_joint = joint(S, priors= args['priors'])
-        S_marginal = marginal(S_joint)
-        posteriors = posterior(S_joint, S_marginal)
-        predictions = np.argmax(posteriors, axis= 0)
-
-    else:
-        log_S = multiclass_log_likelihood(DTE, mu, C, log_pdf_MVG)
-        log_S_joint = log_joint(log_S, priors= args['priors'])
-        log_S_marginal = log_marginal(log_S_joint)
-        posteriors = log_posterior(log_S_joint, log_S_marginal)
-        predictions = np.argmax(posteriors, axis= 0)
-
-    if args['retPosteriors']: return posteriors, predictions
-    return predictions
-
-def Gaussian_Classifier_new_2(DTR, LTR, DTE, log= True, priors= False, version= 'base', retPosteriors= False, retScores= False):
+def Gaussian_Classifier(DTR, LTR, DTE, version= 'base', priors= False, log= True, retPosteriors= False):
 
     mu, C = multiclass_MVG_estimate(DTR, LTR, version= version)
     
@@ -133,21 +108,8 @@ def Gaussian_Classifier_new_2(DTR, LTR, DTE, log= True, priors= False, version= 
         posteriors = log_posterior(log_S_joint, log_S_marginal)
         predictions = np.argmax(posteriors, axis= 0)
 
-    #######################
-    #check again this section
-    #######################
-
-    print('check the gaussina log or not log posteriors please')
-
     if retPosteriors: return posteriors, predictions
-    #posteriors[posteriors == 0.] = -1e-15
-    if retScores: return posteriors[0] / posteriors[1]
-    #with or without /? is loglikelihood with - instead of /?
     return predictions
-
-    #########################
-    #########################
-    #########################
 
 class GaussianClassifier:
     def __init__(self, DTR, LTR, version= 'base', log= True, priors= False):
@@ -160,32 +122,23 @@ class GaussianClassifier:
             S = multiclass_likelihood(DTE, self.mu, self.C, log_pdf_MVG)
             S_joint = joint(S, priors= self.priors)
             S_marginal = marginal(S_joint)
-            posteriors = posterior(S_joint, S_marginal)
+            return posterior(S_joint, S_marginal)
 
         else:
             log_S = multiclass_log_likelihood(DTE, self.mu, self.C, log_pdf_MVG)
             log_S_joint = log_joint(log_S, priors= self.priors)
             log_S_marginal = log_marginal(log_S_joint)
-            posteriors = log_posterior(log_S_joint, log_S_marginal)
-        
-        return posteriors
+            return log_posterior(log_S_joint, log_S_marginal)
 
     def predict(self, DTE): return np.argmax(self.getPosteriors(DTE), axis= 0)
-
-    ########################
-    ########################
-    ##### e qui ########
-    ########################
-    ########################
     
     def getScores(self, DTE):
         posteriors = self.getPosteriors(DTE)
-        #posteriors[posteriors == 0.] = -1e-15
-        return posteriors[0] - posteriors[1]
-    
-    #####################
-    #####################
-    #####################
+        if self.log:
+            return posteriors[1] - posteriors[0]
+        else:
+            #posteriors[posteriors == 0.] = 1e-15
+            return np.log(posteriors[1] / posteriors[0])
 
 
 

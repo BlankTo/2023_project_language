@@ -21,27 +21,134 @@ print(DTE.shape)
 print(LTE.shape)
 print('______________________________________')
 
-#for K in [1, 10]:
-#    for C in [0.1, 1., 10.]:
-#        print('K: %.1f\tC: %.1f\t-  errorRate: %.1f' % (K, C, svm.SVM(DTR, LTR, DTE, LTE, K, C)))
-#
-#print('------------------------------------------------')
-#
-C = 1.
-#
-#for c in [0., 1.]:
-#    for K in [0., 1.]:
-#        print('K %.1f\tC %.1f\tkernel poly d 2 c %d\t-  errorRate: %.1f' % (K, C, c, svm.SVM(DTR, LTR, DTE, LTE, K, C, svm.get_kernel_poly(c, 2, K**2))))
-#
-#print('------------------------------------------------')
-#
-#for K in [0.]:#[0., 1.]:
-#    for lam in [1.]:#[1., 10.]:
-#        print('K %.1f\tC %.1f\tkernel rbf lam %.1f\t-  errorRate: %.1f' % (K, C, lam, svm.SVM(DTR, LTR, DTE, LTE, K, C, svm.get_kernel_RBF(lam, K**2))))
-#
+for K in [1, 10]:
+    for C in [0.1, 1., 10.]:
+        print('K: %.1f\tC: %.1f\t-  errorRate: %.1f' % (K, C, svm.SVM(DTR, LTR, DTE, LTE, K, C)))
 
+print('------------------------------------------------')
+
+C = 1.
+
+for c in [0., 1.]:
+    for K in [0., 1.]:
+        print('K %.1f\tC %.1f\tkernel poly d 2 c %d\t-  errorRate: %.1f' % (K, C, c, svm.SVM(DTR, LTR, DTE, LTE, K, C, svm.get_kernel_poly(c, 2, K**2))))
+
+print('------------------------------------------------')
+
+for K in [0., 1.]:
+    for lam in [1., 10.]:
+        print('K %.1f\tC %.1f\tkernel rbf lam %.1f\t-  errorRate: %.1f' % (K, C, lam, svm.SVM(DTR, LTR, DTE, LTE, K, C, svm.get_kernel_RBF(lam, K**2))))
+
+
+###
+        
+## prova classe SVM
+
+print('---------------------------------------------------------------')
+print('---------------------------------------------------------------')
+print('classe SVM')
+print('---------------------------------------------------------------')
+print('---------------------------------------------------------------')
+
+for K in [1, 10]:
+    for C in [0.1, 1., 10.]:
+        SVM = svm.SupportVectorMachine(DTR, LTR, K, C)
+        assigned = SVM.predict(DTE)
+        correct = (LTE == assigned).sum()
+        NTE = LTE.size
+        
+        print('K: %.1f\tC: %.1f\t-  errorRate: %.1f' % (K, C, (NTE - correct) * 100 / NTE))
+
+print('------------------------------------------------')
+
+C = 1.
+
+for c in [0., 1.]:
+    for K in [0., 1.]:
+        SVM = svm.SupportVectorMachine(DTR, LTR, K, C, kernel_function= svm.get_kernel_poly(c, 2, K**2))
+        assigned = SVM.predict(DTE)
+        correct = (LTE == assigned).sum()
+        NTE = LTE.size
+        
+        print('K: %.1f\tC: %.1f\t-  errorRate: %.1f' % (K, C, (NTE - correct) * 100 / NTE))
+        
+print('------------------------------------------------')
+
+for K in [0., 1.]:
+    for lam in [1., 10.]:
+        SVM = svm.SupportVectorMachine(DTR, LTR, K, C, kernel_function= svm.get_kernel_RBF(lam, K**2))
+        assigned = SVM.predict(DTE)
+        correct = (LTE == assigned).sum()
+        NTE = LTE.size
+        
+        print('K: %.1f\tC: %.1f\t-  errorRate: %.1f' % (K, C, (NTE - correct) * 100 / NTE))
+
+###
+
+## prova cross_val
+
+print('\n::::::::::::::::::::::::::::::::::')
+print('::::::::::::::::::::::::::::::::::')
+print('Cross validation base')
+print('::::::::::::::::::::::::::::::::::')
+print('::::::::::::::::::::::::::::::::::\n')
+
+for K in [1, 10]:
+    for C in [0.1, 1., 10.]:
+        print(f'\n(K, C): {(K, C)}')
+        LTE_cross, predictions, scores = utils.cross_validation_base(D, L, svm.SupportVectorMachine, 10, None, None, 0, [K, C], True, False)
+        utils.get_metrics(scores, LTE_cross, 0.5, 1, 1, print_err= True)
+
+for c in [0., 1.]:
+    for K in [0., 1.]:
+        print(f'\n(c, K): {(c, K)}')
+        LTE_cross, predictions, scores = utils.cross_validation_base(D, L, svm.SupportVectorMachine, 10, None, None, 0, [K, C, svm.get_kernel_poly(c, 2, K**2)], True, False)
+        utils.get_metrics(scores, LTE_cross, 0.5, 1, 1, print_err= True)
+
+for K in [0., 1.]:
+    for lam in [1., 10.]:
+        print(f'\n(K, lambda): {(K, lam)}')
+        LTE_cross, predictions, scores = utils.cross_validation_base(D, L, svm.SupportVectorMachine, 10, None, None, 0, [K, C, svm.get_kernel_RBF(lam, K**2)], True, False)
+        utils.get_metrics(scores, LTE_cross, 0.5, 1, 1, print_err= True)
+    
+print('\n::::::::::::::::::::::::::::::::::')
+print('::::::::::::::::::::::::::::::::::')
+print('Cross validation v2')
+print('::::::::::::::::::::::::::::::::::')
+print('::::::::::::::::::::::::::::::::::\n')
+
+utils.cross_validation(D, L, 10, svm.SupportVectorMachine, 
+    model_params= [
+    [1, 0.1],
+    [1, 1.],
+    [1, 10.],
+    [10, 0.1],
+    [10, 1.],
+    [10, 10.],
+    [0, 1, svm.get_kernel_poly(0, 2, 0**2)],
+    [1, 1, svm.get_kernel_poly(0, 2, 1**2)],
+    [0, 1, svm.get_kernel_poly(1, 2, 0**2)],
+    [1, 1, svm.get_kernel_poly(1, 2, 1**2)],
+    [0, 1, svm.get_kernel_RBF(1, 0**2)],
+    [0, 1, svm.get_kernel_RBF(10, 0**2)],
+    [1, 1, svm.get_kernel_RBF(1, 1**2)],
+    [1, 1, svm.get_kernel_RBF(10, 1**2)],
+    ],
+    effective=
+    [
+        0.5,
+     ],
+    print_err= True,
+    prepro= [
+    [(pre.NoTransform, [])],
+    #[(pre.Standardizer, [])],
+    ])
+
+###
 
 ### prova MNIST
+
+exit(0)
 
 L = np.load('labs/lab09/MNIST_target.npy')
 D = np.load('labs/lab09/MNIST_data.npy')

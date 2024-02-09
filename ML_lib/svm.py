@@ -54,7 +54,7 @@ def SVM(DTR, LTR, DTE, LTE, K, C, kernel_function= None, pT= None, maxiter= 1500
         bounds = np.array([(0, C * pT[LTR[i]] / (pTrue if LTR[i]==1 else pFalse)) for i in range(NTR)])
     else: bounds = np.array([(0, C) for _ in range(NTR)])
     H = get_H_linear(DTRb, Z) if kernel_function is None else get_H_kernel(DTRb, Z, kernel_function)
-    al, dual_loss, _ = fmin_l_bfgs_b(get_Ldual(H), np.zeros(NTR), bounds= bounds, maxiter= maxiter)#, factr= 1.0
+    al, dual_loss, _ = fmin_l_bfgs_b(get_Ldual(H), np.zeros(NTR), bounds= bounds, maxiter= maxiter, factr= 1.0)#, factr= 1.0
     #print('%.7f' % -dual_loss)
     if retModel: return al, kernel_function
 
@@ -83,13 +83,28 @@ def SVM(DTR, LTR, DTE, LTE, K, C, kernel_function= None, pT= None, maxiter= 1500
     
     if retScores: return scores.reshape(DTE.shape[1], )
 
-    assigned = scores>0
+    assigned = scores > 0
     
     if retAssigned: return assigned.reshape(DTE.shape[1],)
 
     correct = (LTE == assigned).sum()
     NTE = LTE.size
     return (NTE - correct) * 100 / NTE
+
+#def use_SVM(DTR, LTR, DTE, K, al, kernel_function= False):
+#    Z = LTR * 2 - 1
+#    if not kernel_function:
+#        DTRb = np.vstack([DTR, K * np.ones(DTR.shape[1])])
+#        DTEb = np.vstack([DTE, K * np.ones(DTE.shape[1])])
+#        w = np.array([al[i] * Z[i] * DTRb[:, i] for i in np.argwhere(al)]).sum(axis= 0)
+#        w1 = w[:-1]
+#        b1 = w[-1]
+#        scores = w1.T @ DTE + b1
+#    else:
+#        scores = np.array([al[i] * Z[i] * kernel_function(DTR[:, i], DTE).T for i in np.argwhere(al)[:, 0]]).sum(axis= 0)
+#
+#    assigned = scores>0
+#    return assigned
 
 class SupportVectorMachine:
     def __init__(self, DTR, LTR, K= None, C= None, kernel_function= None, pT= None, maxiter= 15000, threshold= None):
@@ -111,7 +126,7 @@ class SupportVectorMachine:
             bounds = np.array([(0, C * pT[LTR[i]] / (pTrue if LTR[i]==1 else pFalse)) for i in range(NTR)])
         else: bounds = np.array([(0, C) for _ in range(NTR)])
         H = get_H_linear(DTRb, self.Z) if self.kernel_function is None else get_H_kernel(DTRb, self.Z, self.kernel_function)
-        self.al, dual_loss, _ = fmin_l_bfgs_b(get_Ldual(H), np.zeros(NTR), bounds= bounds, maxiter= maxiter)
+        self.al, dual_loss, _ = fmin_l_bfgs_b(get_Ldual(H), np.zeros(NTR), bounds= bounds, maxiter= maxiter, factr= 1.)
 
     def getScores(self, DTE):
 
@@ -137,20 +152,3 @@ class SupportVectorMachine:
     def predict(self, DTE):
         if self.threshold is None: return self.getScores(DTE)>0
         else: return self.getScores(DTE) > self.threshold
-
-
-
-def use_SVM(DTR, LTR, DTE, K, al, kernel_function= False):
-    Z = LTR * 2 - 1
-    if not kernel_function:
-        DTRb = np.vstack([DTR, K * np.ones(DTR.shape[1])])
-        DTEb = np.vstack([DTE, K * np.ones(DTE.shape[1])])
-        w = np.array([al[i] * Z[i] * DTRb[:, i] for i in np.argwhere(al)]).sum(axis= 0)
-        w1 = w[:-1]
-        b1 = w[-1]
-        scores = w1.T @ DTE + b1
-    else:
-        scores = np.array([al[i] * Z[i] * kernel_function(DTR[:, i], DTE).T for i in np.argwhere(al)[:, 0]]).sum(axis= 0)
-
-    assigned = scores>0
-    return assigned

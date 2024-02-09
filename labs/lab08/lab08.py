@@ -72,7 +72,7 @@ from ML_lib.plot_lib import ROCcurve, BayesErrorPlot
 #print(f'p1: {p1}, Cfp: {Cfp}, Cfn: {Cfn}')
 #conf = utils.getConfusionMatrix((llr > utils.getBayesThreshold(p1, Cfp, Cfn)).astype(int), labels_infpar)
 #print(conf)
-#FPR, FNR, _, _ = utils.getFR(conf)
+#FPR, FNR, _, _ = utils.getRatios(conf)
 #print('%.3f' % utils.empiricalBayesRisk(p1, Cfp, Cfn, FPR, FNR))
 #print('%.3f' % utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR))
 #minDCF = utils.getMinNormDCF(llr, labels_infpar, p1, Cfp, Cfn)
@@ -85,7 +85,7 @@ from ML_lib.plot_lib import ROCcurve, BayesErrorPlot
 #print(f'p1: {p1}, Cfp: {Cfp}, Cfn: {Cfn}')
 #conf = utils.getConfusionMatrix((llr > utils.getBayesThreshold(p1, Cfp, Cfn)).astype(int), labels_infpar)
 #print(conf)
-#FPR, FNR, _, _ = utils.getFR(conf)
+#FPR, FNR, _, _ = utils.getRatios(conf)
 #print('%.3f' % utils.empiricalBayesRisk(p1, Cfp, Cfn, FPR, FNR))
 #print('%.3f' % utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR))
 #minDCF = utils.getMinNormDCF(llr, labels_infpar, p1, Cfp, Cfn)
@@ -98,7 +98,7 @@ from ML_lib.plot_lib import ROCcurve, BayesErrorPlot
 #print(f'p1: {p1}, Cfp: {Cfp}, Cfn: {Cfn}')
 #conf = utils.getConfusionMatrix((llr > utils.getBayesThreshold(p1, Cfp, Cfn)).astype(int), labels_infpar)
 #print(conf)
-#FPR, FNR, _, _ = utils.getFR(conf)
+#FPR, FNR, _, _ = utils.getRatios(conf)
 #print('%.3f' % utils.empiricalBayesRisk(p1, Cfp, Cfn, FPR, FNR))
 #print('%.3f' % utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR))
 #minDCF = utils.getMinNormDCF(llr, labels_infpar, p1, Cfp, Cfn)
@@ -111,7 +111,7 @@ from ML_lib.plot_lib import ROCcurve, BayesErrorPlot
 #print(f'p1: {p1}, Cfp: {Cfp}, Cfn: {Cfn}')
 #conf = utils.getConfusionMatrix((llr > utils.getBayesThreshold(p1, Cfp, Cfn)).astype(int), labels_infpar)
 #print(conf)
-#FPR, FNR, _, _ = utils.getFR(conf)
+#FPR, FNR, _, _ = utils.getRatios(conf)
 #print('%.3f' % utils.empiricalBayesRisk(p1, Cfp, Cfn, FPR, FNR))
 #print('%.3f' % utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR))
 #minDCF = utils.getMinNormDCF(llr, labels_infpar, p1, Cfp, Cfn)
@@ -141,12 +141,18 @@ Cfn = 1
 print(f'p1: {p1}, Cfp: {Cfp}, Cfn: {Cfn}')
 
 conf = utils.getConfusionMatrix((llr > utils.getBayesThreshold(p1, Cfp, Cfn)).astype(int), labels_infpar)
-FPR, FNR, _, _ = utils.getFR(conf)
-print('eps0.001\t normDCF: %.3f  -  minNormDCF: %.3f' % (utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR), utils.getMinNormDCF(llr, labels_infpar, p1, Cfp, Cfn)))
+FPR, FNR, _, _ = utils.getRatios(conf)
+print('eps0.001\t normDCF: %.3f  -  minNormDCF: %.3f\n' % (utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR), utils.getMinNormDCF(llr, labels_infpar, p1, Cfp, Cfn)))
+utils.get_metrics(llr, labels_infpar, p1, Cfp, Cfn)
+
+print('\n--------------------\n--------------------\n--------------------')
 
 conf = utils.getConfusionMatrix((llr_eps1 > utils.getBayesThreshold(p1, Cfp, Cfn)).astype(int), labels_infpar_eps1)
-FPR, FNR, _, _ = utils.getFR(conf)
+FPR, FNR, _, _ = utils.getRatios(conf)
 print('eps1.\t\t normDCF: %.3f  -  minNormDCF: %.3f\n' % (utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR), utils.getMinNormDCF(llr_eps1, labels_infpar_eps1, p1, Cfp, Cfn)))
+utils.get_metrics(llr_eps1, labels_infpar_eps1, p1, Cfp, Cfn)
+
+print('\n--------------------\n--------------------\n--------------------')
 
 
 p1 = 0.8
@@ -155,12 +161,18 @@ Cfn = 1
 print(f'p1: {p1}, Cfp: {Cfp}, Cfn: {Cfn}')
 
 conf = utils.getConfusionMatrix((llr > utils.getBayesThreshold(p1, Cfp, Cfn)).astype(int), labels_infpar)
-FPR, FNR, _, _ = utils.getFR(conf)
-print('eps0.001\t normDCF: %.3f  -  minNormDCF: %.3f' % (utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR), utils.getMinNormDCF(llr, labels_infpar, p1, Cfp, Cfn)))
+FPR, FNR, _, _ = utils.getRatios(conf)
+print('eps0.001\t normDCF: %.3f  -  minNormDCF: %.3f\n' % (utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR), utils.getMinNormDCF(llr, labels_infpar, p1, Cfp, Cfn)))
+utils.get_metrics(llr, labels_infpar, p1, Cfp, Cfn)
+
+print('\n--------------------\n--------------------\n--------------------')
 
 conf = utils.getConfusionMatrix((llr_eps1 > utils.getBayesThreshold(p1, Cfp, Cfn)).astype(int), labels_infpar_eps1)
-FPR, FNR, _, _ = utils.getFR(conf)
+FPR, FNR, _, _ = utils.getRatios(conf)
 print('eps1.\t\t normDCF: %.3f  -  minNormDCF: %.3f\n' % (utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR), utils.getMinNormDCF(llr_eps1, labels_infpar_eps1, p1, Cfp, Cfn)))
+utils.get_metrics(llr_eps1, labels_infpar_eps1, p1, Cfp, Cfn)
+
+print('\n--------------------\n--------------------\n--------------------')
 
 
 p1 = 0.5
@@ -169,12 +181,18 @@ Cfn = 10
 print(f'p1: {p1}, Cfp: {Cfp}, Cfn: {Cfn}')
 
 conf = utils.getConfusionMatrix((llr > utils.getBayesThreshold(p1, Cfp, Cfn)).astype(int), labels_infpar)
-FPR, FNR, _, _ = utils.getFR(conf)
-print('eps0.001\t normDCF: %.3f  -  minNormDCF: %.3f' % (utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR), utils.getMinNormDCF(llr, labels_infpar, p1, Cfp, Cfn)))
+FPR, FNR, _, _ = utils.getRatios(conf)
+print('eps0.001\t normDCF: %.3f  -  minNormDCF: %.3f\n' % (utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR), utils.getMinNormDCF(llr, labels_infpar, p1, Cfp, Cfn)))
+utils.get_metrics(llr, labels_infpar, p1, Cfp, Cfn)
+
+print('\n--------------------\n--------------------\n--------------------')
 
 conf = utils.getConfusionMatrix((llr_eps1 > utils.getBayesThreshold(p1, Cfp, Cfn)).astype(int), labels_infpar_eps1)
-FPR, FNR, _, _ = utils.getFR(conf)
+FPR, FNR, _, _ = utils.getRatios(conf)
 print('eps1.\t\t normDCF: %.3f  -  minNormDCF: %.3f\n' % (utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR), utils.getMinNormDCF(llr_eps1, labels_infpar_eps1, p1, Cfp, Cfn)))
+utils.get_metrics(llr_eps1, labels_infpar_eps1, p1, Cfp, Cfn)
+
+print('\n--------------------\n--------------------\n--------------------')
 
 
 p1 = 0.8
@@ -183,20 +201,31 @@ Cfn = 1
 print(f'p1: {p1}, Cfp: {Cfp}, Cfn: {Cfn}')
 
 conf = utils.getConfusionMatrix((llr > utils.getBayesThreshold(p1, Cfp, Cfn)).astype(int), labels_infpar)
-FPR, FNR, _, _ = utils.getFR(conf)
-print('eps0.001\t normDCF: %.3f  -  minNormDCF: %.3f' % (utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR), utils.getMinNormDCF(llr, labels_infpar, p1, Cfp, Cfn)))
+FPR, FNR, _, _ = utils.getRatios(conf)
+print('eps0.001\t normDCF: %.3f  -  minNormDCF: %.3f\n' % (utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR), utils.getMinNormDCF(llr, labels_infpar, p1, Cfp, Cfn)))
+utils.get_metrics(llr, labels_infpar, p1, Cfp, Cfn)
+
+print('\n--------------------\n--------------------\n--------------------')
 
 conf = utils.getConfusionMatrix((llr_eps1 > utils.getBayesThreshold(p1, Cfp, Cfn)).astype(int), labels_infpar_eps1)
-FPR, FNR, _, _ = utils.getFR(conf)
+FPR, FNR, _, _ = utils.getRatios(conf)
 print('eps1.\t\t normDCF: %.3f  -  minNormDCF: %.3f\n' % (utils.normalizedDCF(p1, Cfp, Cfn, FPR, FNR), utils.getMinNormDCF(llr_eps1, labels_infpar_eps1, p1, Cfp, Cfn)))
+utils.get_metrics(llr_eps1, labels_infpar_eps1, p1, Cfp, Cfn)
+
+print('\n--------------------\n--------------------\n--------------------')
 
 
-effPriorLogOdds = np.linspace(-3, 3, 21)
-plt.figure()
-BayesErrorPlot(llr, labels_infpar, effPriorLogOdds, legend_text= 'eps0.001', stack= True)
-BayesErrorPlot(llr_eps1, labels_infpar_eps1, effPriorLogOdds, legend_text= 'eps1.', stack= True)
-plt.ylim([0, 1.1])
-plt.xlim([-3, 3])
-plt.grid()
-plt.legend()
-plt.show()
+#effPriorLogOdds = np.linspace(-3, 3, 21)
+#plt.figure()
+#BayesErrorPlot(llr, labels_infpar, effPriorLogOdds, legend_text= 'eps0.001', stack= True)
+#BayesErrorPlot(llr_eps1, labels_infpar_eps1, effPriorLogOdds, legend_text= 'eps1.', stack= True)
+#plt.ylim([0, 1.1])
+#plt.xlim([-3, 3])
+#plt.grid()
+#plt.legend()
+#plt.show()
+
+###################################
+###################################
+###################################
+

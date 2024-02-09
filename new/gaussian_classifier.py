@@ -14,22 +14,23 @@ L = np.load('data_npy\\LTR_language.npy')
 N_CLASS = 2
 M_BASE, NTR = D_BASE.shape
 
-utils.cross_validation(D_BASE, L, 10, gau.GaussianClassifier, [
+utils.cross_validation(D_BASE, L, 100, gau.GaussianClassifier, [
     [],
     ['naive'],
     ['tied'],
     ['naive-tied']
-    ], progress= True, print_act= False, save= True, filename= 'results\\cross_val_gau.txt', prepro= [
+    ], progress= False, save= True, filename= 'results\\cross_val_gau.txt', prepro= [
 
-    [(pre.NoTransform, [])],
-    [(pre.Standardizer, [])],
-    [(pre.Gaussianizer, [])],
+    #[(pre.NoTransform, [])],
+    #[(pre.Standardizer, [])],
+    #[(pre.Gaussianizer, [])],
 
-    [(pre.Standardizer, []), (pre.PCA, [5])],
-    [(pre.Standardizer, []), (pre.PCA, [4])],
-    [(pre.Standardizer, []), (pre.PCA, [3])],
+    #[(pre.Standardizer, []), (pre.PCA, [5])],
+    #[(pre.Standardizer, []), (pre.PCA, [4])],
+    #[(pre.Standardizer, []), (pre.PCA, [3])],
 
-    [(pre.Gaussianizer, []), (pre.PCA, [5])],
-    [(pre.Gaussianizer, []), (pre.PCA, [4])],
-    [(pre.Gaussianizer, []), (pre.PCA, [3])],
-    ])
+    #[(pre.Gaussianizer, []), (pre.PCA, [5])],
+    #[(pre.Gaussianizer, []), (pre.PCA, [4])],
+    #[(pre.Gaussianizer, []), (pre.PCA, [3])],
+    [(pre.LDA, [1])]
+    ], print_err= True)

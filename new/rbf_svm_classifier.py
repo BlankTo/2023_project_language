@@ -17,7 +17,7 @@ M_BASE, NTR = D_BASE.shape
 model_params_init = [[K, C, lam] for K in [0., 1e-6, 1e-4, 0.01, 1., 100.] for C in [1e-4, 0.01, 1.] for lam in [0., 1e-6, 1e-4, 0.01, 1., 100.]]
 model_params = [[K, C, svm.get_kernel_RBF(lam, K**2)] for K, C, lam in model_params_init]
 
-utils.cross_validation(D_BASE, L, 10, svm.SupportVectorMachine, model_params, progress= True, print_act= False, save= True, filename= 'results\\cross_val_rbf_svm.txt', model_params_print= model_params_init, prepro= [
+utils.cross_validation(D_BASE, L, 10, svm.SupportVectorMachine, model_params, progress= True, print_err= True, save= True, filename= 'results\\cross_val_rbf_svm.txt', model_params_print= model_params_init, prepro= [
     [(pre.NoTransform, [])],
     
     [(pre.Standardizer, [])],

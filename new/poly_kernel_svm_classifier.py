@@ -22,7 +22,7 @@ model_params_init = [[K, C, c, d] for K in [0., 1e-6, 1e-4, 0.01, 1., 100.] for 
 
 model_params = [[K, C, svm.get_kernel_poly(c, d, K**2)] for K, C, c, d in model_params_init]
 
-utils.cross_validation(D_BASE, L, 10, svm.SupportVectorMachine, model_params, progress= True, print_act= False, save= True, filename= 'results\\cross_val_poly3_svm.txt', model_params_print= model_params_init, prepro= [
+utils.cross_validation(D_BASE, L, 10, svm.SupportVectorMachine, model_params, progress= True, print_err= True, save= True, filename= 'results\\cross_val_poly3_svm.txt', model_params_print= model_params_init, prepro= [
     [(pre.NoTransform, [])],
     
     [(pre.Standardizer, [])],

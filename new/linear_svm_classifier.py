@@ -17,7 +17,7 @@ M_BASE, NTR = D_BASE.shape
 utils.cross_validation(D_BASE, L, 100, svm.SupportVectorMachine, [
     [K, C, None] for K in [0., 1e-6, 1e-4, 0.01, 1., 100.] for C in [1e-4, 0.01, 1.]
     #[K, C, None, [1-prior, prior]] for K in [0., 1e-6, 1e-4, 0.01, 1., 100.] for C in [1e-4, 0.01, 1.] for prior in np.arange(0.1, 0.5, 0.1)
-    ], progress= True, print_act= False, save= True, filename= 'results\\cross_val_lin_svm.txt', prepro= [
+    ], progress= True, print_err= True, save= True, filename= 'results\\cross_val_lin_svm.txt', prepro= [
     [(pre.NoTransform, [])],
     [(pre.Standardizer, [])],
 

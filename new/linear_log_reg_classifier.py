@@ -28,7 +28,7 @@ for prior in np.arange(0.1, 0.5, 0.1):
     for lam_exp in range(-6, 3):
         model_params += [[10 ** lam_exp, prior]]
 
-utils.cross_validation(D_BASE, L, 10, lg.LinearRegressionClassifier, model_params, progress= True, print_act= False, save= False, filename= 'results\\cross_val_lin_log_reg.txt', prepro= [
+utils.cross_validation(D_BASE, L, 10, lg.LinearRegressionClassifier, model_params, progress= True, print_err= True, save= False, filename= 'results\\cross_val_lin_log_reg.txt', prepro= [
     [(pre.NoTransform, [])],
     [(pre.Standardizer, [])],
 
