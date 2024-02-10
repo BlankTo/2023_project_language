@@ -54,11 +54,11 @@ def euclidean_classifier(D_train, L_train, D_test, retScores= False):
 
 print('Euclidean')
 utils.cross_validation(D_BASE, L, 100, EuclideanClassifier, [[]], print_err= True, progress= False, prepro= [
-    #[(pre.NoTransform, [])],
-    #[(pre.Standardizer, [])],
-    #[(pre.Standardizer, []), (pre.PCA, [5])],
-    #[(pre.Standardizer, []), (pre.PCA, [4])],
-    #[(pre.Standardizer, []), (pre.PCA, [3])],
+    [(pre.NoTransform, [])],
+    [(pre.Standardizer, [])],
+    [(pre.Standardizer, []), (pre.PCA, [5])],
+    [(pre.Standardizer, []), (pre.PCA, [4])],
+    [(pre.Standardizer, []), (pre.PCA, [3])],
     [(pre.LDA, [1])],
     #[(pre.Standardizer, []), (pre.LDA, [])],
     #[(pre.Standardizer, []), (pre.PCA, [5]), (pre.LDA, [])],

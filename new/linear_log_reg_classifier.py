@@ -23,16 +23,19 @@ prior = (L == 1).sum() / NTR
 model_params = [0] + [10 ** lam_exp for lam_exp in range(-6, 3)]
 
 model_params = []
-for prior in np.arange(0.1, 0.5, 0.1):
+for prior in [0.2, 0.5, 0.8]:#np.arange(0.1, 0.9, 0.2):
     model_params += [[0, prior]]
     for lam_exp in range(-6, 3):
         model_params += [[10 ** lam_exp, prior]]
 
-utils.cross_validation(D_BASE, L, 10, lg.LinearRegressionClassifier, model_params, progress= True, print_err= True, save= False, filename= 'results\\cross_val_lin_log_reg.txt', prepro= [
+utils.cross_validation(D_BASE, L, 10, lg.LinearRegressionClassifier, model_params, effective= [0.2, 0.5, 0.8], progress= True, print_err= True, save= True , filename= 'results\\cross_val_lin_log_reg.txt', prepro= [
     [(pre.NoTransform, [])],
     [(pre.Standardizer, [])],
 
     [(pre.Standardizer, []), (pre.PCA, [5])],
     [(pre.Standardizer, []), (pre.PCA, [4])],
     [(pre.Standardizer, []), (pre.PCA, [3])],
+
+    [(pre.LDA, [1])],
+    [(pre.Standardizer, []), (pre.LDA, [1])],
     ])
