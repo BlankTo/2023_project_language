@@ -120,17 +120,18 @@ class SupportVectorMachine:
         DTRb = np.vstack([DTR, self.K * np.ones(NTR)]) if kernel_function is None else DTR
         self.DTRb = DTRb
 
-        if pT is not None:
+        if pT is None: bounds = np.array([(0, C) for _ in range(NTR)])
+        else:
             pTrue = LTR.sum() / NTR
             pFalse = 1 - pTrue
             bounds = np.array([(0, C * pT[LTR[i]] / (pTrue if LTR[i]==1 else pFalse)) for i in range(NTR)])
-        else: bounds = np.array([(0, C) for _ in range(NTR)])
         H = get_H_linear(DTRb, self.Z) if self.kernel_function is None else get_H_kernel(DTRb, self.Z, self.kernel_function)
-        self.al, dual_loss, _ = fmin_l_bfgs_b(get_Ldual(H), np.zeros(NTR), bounds= bounds, maxiter= maxiter, factr= 1.)
+        self.al, dual_loss, self.info = fmin_l_bfgs_b(get_Ldual(H), np.zeros(NTR), bounds= bounds, maxiter= maxiter, factr= 1.)
 
     def getScores(self, DTE):
 
         if np.argwhere(self.al).shape[0] == 0:
+            print(self.info)
             print('error on np.argwhere in getScores of SupportVectorMachine\n\n')
             print(f'params -> K:{self.K} - C: {self.C}\n\n')
             return np.zeros(DTE.shape[1])

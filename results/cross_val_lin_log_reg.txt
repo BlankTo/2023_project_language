@@ -1258,3 +1258,321 @@ Standardizer with []  LDA with [1]   -- params: [100, 0.8, ]
 	normDCF(0.2, 1, 1): 1.838  -  minNormDCF: 1.002  -  err: 36.7
 	normDCF(0.5, 1, 1): 1.000  -  minNormDCF: 0.514  -  err: 83.1
 	normDCF(0.8, 1, 1): 1.000  -  minNormDCF: 0.549  -  err: 83.1
+
+NoTransform with []   -- params: [0, 0.2, ]                           - minDCF(0.20): 1.002 - minDCF(0.50): 0.520 - minDCF(0.80): 0.559
+NoTransform with []   -- params: [1e-06, 0.2, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.520 - minDCF(0.80): 0.559
+NoTransform with []   -- params: [1e-05, 0.2, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.520 - minDCF(0.80): 0.559
+NoTransform with []   -- params: [0.0001, 0.2, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.520 - minDCF(0.80): 0.559
+NoTransform with []   -- params: [0.001, 0.2, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.520 - minDCF(0.80): 0.559
+NoTransform with []   -- params: [0.01, 0.2, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.520 - minDCF(0.80): 0.559
+NoTransform with []   -- params: [0.1, 0.2, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.518 - minDCF(0.80): 0.554
+NoTransform with []   -- params: [1, 0.2, ]                           - minDCF(0.20): 1.002 - minDCF(0.50): 0.506 - minDCF(0.80): 0.540
+NoTransform with []   -- params: [10, 0.2, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.487 - minDCF(0.80): 0.516
+NoTransform with []   -- params: [100, 0.2, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.489 - minDCF(0.80): 0.512
+NoTransform with []   -- params: [0, 0.5, ]                           - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [1e-06, 0.5, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [1e-05, 0.5, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [0.0001, 0.5, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [0.001, 0.5, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [0.01, 0.5, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [0.1, 0.5, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.530
+NoTransform with []   -- params: [1, 0.5, ]                           - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.527
+NoTransform with []   -- params: [10, 0.5, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.488 - minDCF(0.80): 0.515
+NoTransform with []   -- params: [100, 0.5, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.488 - minDCF(0.80): 0.512
+NoTransform with []   -- params: [0, 0.8, ]                           - minDCF(0.20): 1.002 - minDCF(0.50): 0.483 - minDCF(0.80): 0.518
+NoTransform with []   -- params: [1e-06, 0.8, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.483 - minDCF(0.80): 0.518
+NoTransform with []   -- params: [1e-05, 0.8, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.483 - minDCF(0.80): 0.518
+NoTransform with []   -- params: [0.0001, 0.8, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.483 - minDCF(0.80): 0.518
+NoTransform with []   -- params: [0.001, 0.8, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.483 - minDCF(0.80): 0.518
+NoTransform with []   -- params: [0.01, 0.8, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.483 - minDCF(0.80): 0.517
+NoTransform with []   -- params: [0.1, 0.8, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.485 - minDCF(0.80): 0.516
+NoTransform with []   -- params: [1, 0.8, ]                           - minDCF(0.20): 1.002 - minDCF(0.50): 0.487 - minDCF(0.80): 0.518
+NoTransform with []   -- params: [10, 0.8, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.487 - minDCF(0.80): 0.515
+NoTransform with []   -- params: [100, 0.8, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.486 - minDCF(0.80): 0.512
+
+Standardizer with []   -- params: [0, 0.2, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.520 - minDCF(0.80): 0.559
+Standardizer with []   -- params: [1e-06, 0.2, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.520 - minDCF(0.80): 0.559
+Standardizer with []   -- params: [1e-05, 0.2, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.520 - minDCF(0.80): 0.559
+Standardizer with []   -- params: [0.0001, 0.2, ]                     - minDCF(0.20): 1.002 - minDCF(0.50): 0.520 - minDCF(0.80): 0.559
+Standardizer with []   -- params: [0.001, 0.2, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.520 - minDCF(0.80): 0.554
+Standardizer with []   -- params: [0.01, 0.2, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.514 - minDCF(0.80): 0.544
+Standardizer with []   -- params: [0.1, 0.2, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.502 - minDCF(0.80): 0.517
+Standardizer with []   -- params: [1, 0.2, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.494 - minDCF(0.80): 0.530
+Standardizer with []   -- params: [10, 0.2, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.494 - minDCF(0.80): 0.533
+Standardizer with []   -- params: [100, 0.2, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.496 - minDCF(0.80): 0.535
+Standardizer with []   -- params: [0, 0.5, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+Standardizer with []   -- params: [1e-06, 0.5, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+Standardizer with []   -- params: [1e-05, 0.5, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+Standardizer with []   -- params: [0.0001, 0.5, ]                     - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+Standardizer with []   -- params: [0.001, 0.5, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []   -- params: [0.01, 0.5, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.496 - minDCF(0.80): 0.526
+Standardizer with []   -- params: [0.1, 0.5, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.497 - minDCF(0.80): 0.514
+Standardizer with []   -- params: [1, 0.5, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.531
+Standardizer with []   -- params: [10, 0.5, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.496 - minDCF(0.80): 0.532
+Standardizer with []   -- params: [100, 0.5, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.495 - minDCF(0.80): 0.534
+Standardizer with []   -- params: [0, 0.8, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.483 - minDCF(0.80): 0.518
+Standardizer with []   -- params: [1e-06, 0.8, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.483 - minDCF(0.80): 0.518
+Standardizer with []   -- params: [1e-05, 0.8, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.483 - minDCF(0.80): 0.518
+Standardizer with []   -- params: [0.0001, 0.8, ]                     - minDCF(0.20): 1.002 - minDCF(0.50): 0.483 - minDCF(0.80): 0.517
+Standardizer with []   -- params: [0.001, 0.8, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.483 - minDCF(0.80): 0.516
+Standardizer with []   -- params: [0.01, 0.8, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.487 - minDCF(0.80): 0.513
+Standardizer with []   -- params: [0.1, 0.8, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.490 - minDCF(0.80): 0.514
+Standardizer with []   -- params: [1, 0.8, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.495 - minDCF(0.80): 0.532
+Standardizer with []   -- params: [10, 0.8, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.495 - minDCF(0.80): 0.534
+Standardizer with []   -- params: [100, 0.8, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.494 - minDCF(0.80): 0.534
+
+Standardizer with []  PCA with [5]   -- params: [0, 0.2, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.512 - minDCF(0.80): 0.542
+Standardizer with []  PCA with [5]   -- params: [1e-06, 0.2, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.512 - minDCF(0.80): 0.542
+Standardizer with []  PCA with [5]   -- params: [1e-05, 0.2, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.512 - minDCF(0.80): 0.542
+Standardizer with []  PCA with [5]   -- params: [0.0001, 0.2, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.512 - minDCF(0.80): 0.542
+Standardizer with []  PCA with [5]   -- params: [0.001, 0.2, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.512 - minDCF(0.80): 0.542
+Standardizer with []  PCA with [5]   -- params: [0.01, 0.2, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.509 - minDCF(0.80): 0.541
+Standardizer with []  PCA with [5]   -- params: [0.1, 0.2, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.502 - minDCF(0.80): 0.517
+Standardizer with []  PCA with [5]   -- params: [1, 0.2, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.533
+Standardizer with []  PCA with [5]   -- params: [10, 0.2, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.537
+Standardizer with []  PCA with [5]   -- params: [100, 0.2, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.537
+Standardizer with []  PCA with [5]   -- params: [0, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []  PCA with [5]   -- params: [1e-06, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []  PCA with [5]   -- params: [1e-05, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []  PCA with [5]   -- params: [0.0001, 0.5, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []  PCA with [5]   -- params: [0.001, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.530
+Standardizer with []  PCA with [5]   -- params: [0.01, 0.5, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.497 - minDCF(0.80): 0.524
+Standardizer with []  PCA with [5]   -- params: [0.1, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.497 - minDCF(0.80): 0.513
+Standardizer with []  PCA with [5]   -- params: [1, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.532
+Standardizer with []  PCA with [5]   -- params: [10, 0.5, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.494 - minDCF(0.80): 0.536
+Standardizer with []  PCA with [5]   -- params: [100, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.536
+Standardizer with []  PCA with [5]   -- params: [0, 0.8, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.484 - minDCF(0.80): 0.504
+Standardizer with []  PCA with [5]   -- params: [1e-06, 0.8, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.484 - minDCF(0.80): 0.504
+Standardizer with []  PCA with [5]   -- params: [1e-05, 0.8, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.484 - minDCF(0.80): 0.504
+Standardizer with []  PCA with [5]   -- params: [0.0001, 0.8, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.484 - minDCF(0.80): 0.505
+Standardizer with []  PCA with [5]   -- params: [0.001, 0.8, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.484 - minDCF(0.80): 0.505
+Standardizer with []  PCA with [5]   -- params: [0.01, 0.8, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.487 - minDCF(0.80): 0.505
+Standardizer with []  PCA with [5]   -- params: [0.1, 0.8, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.490 - minDCF(0.80): 0.515
+Standardizer with []  PCA with [5]   -- params: [1, 0.8, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.494 - minDCF(0.80): 0.535
+Standardizer with []  PCA with [5]   -- params: [10, 0.8, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.494 - minDCF(0.80): 0.535
+Standardizer with []  PCA with [5]   -- params: [100, 0.8, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.494 - minDCF(0.80): 0.537
+
+Standardizer with []  PCA with [4]   -- params: [0, 0.2, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.495 - minDCF(0.80): 0.507
+Standardizer with []  PCA with [4]   -- params: [1e-06, 0.2, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.495 - minDCF(0.80): 0.507
+Standardizer with []  PCA with [4]   -- params: [1e-05, 0.2, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.495 - minDCF(0.80): 0.507
+Standardizer with []  PCA with [4]   -- params: [0.0001, 0.2, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.495 - minDCF(0.80): 0.507
+Standardizer with []  PCA with [4]   -- params: [0.001, 0.2, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.495 - minDCF(0.80): 0.507
+Standardizer with []  PCA with [4]   -- params: [0.01, 0.2, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.494 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [0.1, 0.2, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.507
+Standardizer with []  PCA with [4]   -- params: [1, 0.2, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.489 - minDCF(0.80): 0.533
+Standardizer with []  PCA with [4]   -- params: [10, 0.2, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.536
+Standardizer with []  PCA with [4]   -- params: [100, 0.2, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.492 - minDCF(0.80): 0.536
+Standardizer with []  PCA with [4]   -- params: [0, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [1e-06, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [1e-05, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [0.0001, 0.5, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [0.001, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.490 - minDCF(0.80): 0.505
+Standardizer with []  PCA with [4]   -- params: [0.01, 0.5, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.490 - minDCF(0.80): 0.505
+Standardizer with []  PCA with [4]   -- params: [0.1, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.492 - minDCF(0.80): 0.502
+Standardizer with []  PCA with [4]   -- params: [1, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.489 - minDCF(0.80): 0.532
+Standardizer with []  PCA with [4]   -- params: [10, 0.5, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.535
+Standardizer with []  PCA with [4]   -- params: [100, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.490 - minDCF(0.80): 0.536
+Standardizer with []  PCA with [4]   -- params: [0, 0.8, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.487 - minDCF(0.80): 0.498
+Standardizer with []  PCA with [4]   -- params: [1e-06, 0.8, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.487 - minDCF(0.80): 0.498
+Standardizer with []  PCA with [4]   -- params: [1e-05, 0.8, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.487 - minDCF(0.80): 0.498
+Standardizer with []  PCA with [4]   -- params: [0.0001, 0.8, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.487 - minDCF(0.80): 0.498
+Standardizer with []  PCA with [4]   -- params: [0.001, 0.8, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.487 - minDCF(0.80): 0.497
+Standardizer with []  PCA with [4]   -- params: [0.01, 0.8, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.487 - minDCF(0.80): 0.498
+Standardizer with []  PCA with [4]   -- params: [0.1, 0.8, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.489 - minDCF(0.80): 0.514
+Standardizer with []  PCA with [4]   -- params: [1, 0.8, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.533
+Standardizer with []  PCA with [4]   -- params: [10, 0.8, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.534
+Standardizer with []  PCA with [4]   -- params: [100, 0.8, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.536
+
+Standardizer with []  PCA with [3]   -- params: [0, 0.2, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.561
+Standardizer with []  PCA with [3]   -- params: [1e-06, 0.2, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.561
+Standardizer with []  PCA with [3]   -- params: [1e-05, 0.2, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.561
+Standardizer with []  PCA with [3]   -- params: [0.0001, 0.2, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.561
+Standardizer with []  PCA with [3]   -- params: [0.001, 0.2, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.561
+Standardizer with []  PCA with [3]   -- params: [0.01, 0.2, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.514 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [0.1, 0.2, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.512 - minDCF(0.80): 0.559
+Standardizer with []  PCA with [3]   -- params: [1, 0.2, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.509 - minDCF(0.80): 0.557
+Standardizer with []  PCA with [3]   -- params: [10, 0.2, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.508 - minDCF(0.80): 0.556
+Standardizer with []  PCA with [3]   -- params: [100, 0.2, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.508 - minDCF(0.80): 0.556
+Standardizer with []  PCA with [3]   -- params: [0, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [1e-06, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [1e-05, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [0.0001, 0.5, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [0.001, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [0.01, 0.5, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [0.1, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.559
+Standardizer with []  PCA with [3]   -- params: [1, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.506 - minDCF(0.80): 0.557
+Standardizer with []  PCA with [3]   -- params: [10, 0.5, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.504 - minDCF(0.80): 0.556
+Standardizer with []  PCA with [3]   -- params: [100, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.504 - minDCF(0.80): 0.556
+Standardizer with []  PCA with [3]   -- params: [0, 0.8, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.504 - minDCF(0.80): 0.555
+Standardizer with []  PCA with [3]   -- params: [1e-06, 0.8, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.504 - minDCF(0.80): 0.555
+Standardizer with []  PCA with [3]   -- params: [1e-05, 0.8, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.504 - minDCF(0.80): 0.555
+Standardizer with []  PCA with [3]   -- params: [0.0001, 0.8, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.504 - minDCF(0.80): 0.555
+Standardizer with []  PCA with [3]   -- params: [0.001, 0.8, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.504 - minDCF(0.80): 0.555
+Standardizer with []  PCA with [3]   -- params: [0.01, 0.8, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.504 - minDCF(0.80): 0.557
+Standardizer with []  PCA with [3]   -- params: [0.1, 0.8, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.505 - minDCF(0.80): 0.557
+Standardizer with []  PCA with [3]   -- params: [1, 0.8, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.505 - minDCF(0.80): 0.557
+Standardizer with []  PCA with [3]   -- params: [10, 0.8, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.506 - minDCF(0.80): 0.557
+Standardizer with []  PCA with [3]   -- params: [100, 0.8, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.506 - minDCF(0.80): 0.555
+
+LDA with [1]   -- params: [0, 0.2, ]                                  - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [1e-06, 0.2, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [1e-05, 0.2, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.0001, 0.2, ]                             - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.001, 0.2, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.01, 0.2, ]                               - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.1, 0.2, ]                                - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [1, 0.2, ]                                  - minDCF(0.20): 1.002 - minDCF(0.50): 0.514 - minDCF(0.80): 0.548
+LDA with [1]   -- params: [10, 0.2, ]                                 - minDCF(0.20): 1.002 - minDCF(0.50): 0.513 - minDCF(0.80): 0.548
+LDA with [1]   -- params: [100, 0.2, ]                                - minDCF(0.20): 1.002 - minDCF(0.50): 0.513 - minDCF(0.80): 0.548
+LDA with [1]   -- params: [0, 0.5, ]                                  - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [1e-06, 0.5, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [1e-05, 0.5, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.0001, 0.5, ]                             - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.001, 0.5, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.01, 0.5, ]                               - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.1, 0.5, ]                                - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [1, 0.5, ]                                  - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [10, 0.5, ]                                 - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [100, 0.5, ]                                - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0, 0.8, ]                                  - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.548
+LDA with [1]   -- params: [1e-06, 0.8, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.548
+LDA with [1]   -- params: [1e-05, 0.8, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.548
+LDA with [1]   -- params: [0.0001, 0.8, ]                             - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.548
+LDA with [1]   -- params: [0.001, 0.8, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.548
+LDA with [1]   -- params: [0.01, 0.8, ]                               - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.548
+LDA with [1]   -- params: [0.1, 0.8, ]                                - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [1, 0.8, ]                                  - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [10, 0.8, ]                                 - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [100, 0.8, ]                                - minDCF(0.20): 1.002 - minDCF(0.50): 0.515 - minDCF(0.80): 0.549
+
+NoTransform with []   -- params: [0, 0.5, ]                           - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [1e-06, 0.5, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [1e-05, 0.5, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [0.0001, 0.5, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [0.001, 0.5, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [0.01, 0.5, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [0.1, 0.5, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.530
+NoTransform with []   -- params: [1, 0.5, ]                           - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.527
+NoTransform with []   -- params: [10, 0.5, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.488 - minDCF(0.80): 0.515
+NoTransform with []   -- params: [100, 0.5, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.488 - minDCF(0.80): 0.512
+
+Standardizer with []   -- params: [0, 0.5, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+Standardizer with []   -- params: [1e-06, 0.5, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+Standardizer with []   -- params: [1e-05, 0.5, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+Standardizer with []   -- params: [0.0001, 0.5, ]                     - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+Standardizer with []   -- params: [0.001, 0.5, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []   -- params: [0.01, 0.5, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.496 - minDCF(0.80): 0.526
+Standardizer with []   -- params: [0.1, 0.5, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.497 - minDCF(0.80): 0.514
+Standardizer with []   -- params: [1, 0.5, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.531
+Standardizer with []   -- params: [10, 0.5, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.496 - minDCF(0.80): 0.532
+Standardizer with []   -- params: [100, 0.5, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.495 - minDCF(0.80): 0.534
+
+Standardizer with []  PCA with [5]   -- params: [0, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []  PCA with [5]   -- params: [1e-06, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []  PCA with [5]   -- params: [1e-05, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []  PCA with [5]   -- params: [0.0001, 0.5, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []  PCA with [5]   -- params: [0.001, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.530
+Standardizer with []  PCA with [5]   -- params: [0.01, 0.5, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.497 - minDCF(0.80): 0.524
+Standardizer with []  PCA with [5]   -- params: [0.1, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.497 - minDCF(0.80): 0.513
+Standardizer with []  PCA with [5]   -- params: [1, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.532
+Standardizer with []  PCA with [5]   -- params: [10, 0.5, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.494 - minDCF(0.80): 0.536
+Standardizer with []  PCA with [5]   -- params: [100, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.536
+
+Standardizer with []  PCA with [4]   -- params: [0, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [1e-06, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [1e-05, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [0.0001, 0.5, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [0.001, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.490 - minDCF(0.80): 0.505
+Standardizer with []  PCA with [4]   -- params: [0.01, 0.5, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.490 - minDCF(0.80): 0.505
+Standardizer with []  PCA with [4]   -- params: [0.1, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.492 - minDCF(0.80): 0.502
+Standardizer with []  PCA with [4]   -- params: [1, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.489 - minDCF(0.80): 0.532
+Standardizer with []  PCA with [4]   -- params: [10, 0.5, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.535
+Standardizer with []  PCA with [4]   -- params: [100, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.490 - minDCF(0.80): 0.536
+
+Standardizer with []  PCA with [3]   -- params: [0, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [1e-06, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [1e-05, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [0.0001, 0.5, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [0.001, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [0.01, 0.5, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [0.1, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.559
+Standardizer with []  PCA with [3]   -- params: [1, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.506 - minDCF(0.80): 0.557
+Standardizer with []  PCA with [3]   -- params: [10, 0.5, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.504 - minDCF(0.80): 0.556
+Standardizer with []  PCA with [3]   -- params: [100, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.504 - minDCF(0.80): 0.556
+
+LDA with [1]   -- params: [0, 0.5, ]                                  - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [1e-06, 0.5, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [1e-05, 0.5, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.0001, 0.5, ]                             - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.001, 0.5, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.01, 0.5, ]                               - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.1, 0.5, ]                                - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [1, 0.5, ]                                  - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [10, 0.5, ]                                 - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [100, 0.5, ]                                - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+
+NoTransform with []   -- params: [0, 0.5, ]                           - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [1e-06, 0.5, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [1e-05, 0.5, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [0.0001, 0.5, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [0.001, 0.5, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [0.01, 0.5, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+NoTransform with []   -- params: [0.1, 0.5, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.530
+NoTransform with []   -- params: [1, 0.5, ]                           - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.527
+NoTransform with []   -- params: [10, 0.5, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.488 - minDCF(0.80): 0.515
+NoTransform with []   -- params: [100, 0.5, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.488 - minDCF(0.80): 0.512
+
+Standardizer with []   -- params: [0, 0.5, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+Standardizer with []   -- params: [1e-06, 0.5, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+Standardizer with []   -- params: [1e-05, 0.5, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+Standardizer with []   -- params: [0.0001, 0.5, ]                     - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.533
+Standardizer with []   -- params: [0.001, 0.5, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []   -- params: [0.01, 0.5, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.496 - minDCF(0.80): 0.526
+Standardizer with []   -- params: [0.1, 0.5, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.497 - minDCF(0.80): 0.514
+Standardizer with []   -- params: [1, 0.5, ]                          - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.531
+Standardizer with []   -- params: [10, 0.5, ]                         - minDCF(0.20): 1.002 - minDCF(0.50): 0.496 - minDCF(0.80): 0.532
+Standardizer with []   -- params: [100, 0.5, ]                        - minDCF(0.20): 1.002 - minDCF(0.50): 0.495 - minDCF(0.80): 0.534
+
+Standardizer with []  PCA with [5]   -- params: [0, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []  PCA with [5]   -- params: [1e-06, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []  PCA with [5]   -- params: [1e-05, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []  PCA with [5]   -- params: [0.0001, 0.5, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.531
+Standardizer with []  PCA with [5]   -- params: [0.001, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.498 - minDCF(0.80): 0.530
+Standardizer with []  PCA with [5]   -- params: [0.01, 0.5, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.497 - minDCF(0.80): 0.524
+Standardizer with []  PCA with [5]   -- params: [0.1, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.497 - minDCF(0.80): 0.513
+Standardizer with []  PCA with [5]   -- params: [1, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.532
+Standardizer with []  PCA with [5]   -- params: [10, 0.5, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.494 - minDCF(0.80): 0.536
+Standardizer with []  PCA with [5]   -- params: [100, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.493 - minDCF(0.80): 0.536
+
+Standardizer with []  PCA with [4]   -- params: [0, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [1e-06, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [1e-05, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [0.0001, 0.5, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [0.001, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.490 - minDCF(0.80): 0.505
+Standardizer with []  PCA with [4]   -- params: [0.01, 0.5, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.490 - minDCF(0.80): 0.505
+Standardizer with []  PCA with [4]   -- params: [0.1, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.492 - minDCF(0.80): 0.502
+Standardizer with []  PCA with [4]   -- params: [1, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.489 - minDCF(0.80): 0.532
+Standardizer with []  PCA with [4]   -- params: [10, 0.5, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.491 - minDCF(0.80): 0.535
+Standardizer with []  PCA with [4]   -- params: [100, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.490 - minDCF(0.80): 0.536
+
+Standardizer with []  PCA with [3]   -- params: [0, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [1e-06, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [1e-05, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [0.0001, 0.5, ]       - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [0.001, 0.5, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [0.01, 0.5, ]         - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.560
+Standardizer with []  PCA with [3]   -- params: [0.1, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.559
+Standardizer with []  PCA with [3]   -- params: [1, 0.5, ]            - minDCF(0.20): 1.002 - minDCF(0.50): 0.506 - minDCF(0.80): 0.557
+Standardizer with []  PCA with [3]   -- params: [10, 0.5, ]           - minDCF(0.20): 1.002 - minDCF(0.50): 0.504 - minDCF(0.80): 0.556
+Standardizer with []  PCA with [3]   -- params: [100, 0.5, ]          - minDCF(0.20): 1.002 - minDCF(0.50): 0.504 - minDCF(0.80): 0.556
+
+LDA with [1]   -- params: [0, 0.5, ]                                  - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [1e-06, 0.5, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [1e-05, 0.5, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.0001, 0.5, ]                             - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.001, 0.5, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.01, 0.5, ]                               - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [0.1, 0.5, ]                                - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [1, 0.5, ]                                  - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [10, 0.5, ]                                 - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [100, 0.5, ]                                - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549

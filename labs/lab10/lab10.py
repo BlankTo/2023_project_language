@@ -58,6 +58,9 @@ def load_gmm(filename):
 #    print(f'w: {my_EM[k][0]}')
 #    print(f'mu: {my_EM[k][1]}')
 #    print(f'cov: {my_EM[k][2]}')
+#    print(f'w_err: {prof_EM[k][0] - my_EM[k][0]}')
+#    print(f'mu_err: {prof_EM[k][1] - my_EM[k][1]}')
+#    print(f'cov_err: {prof_EM[k][2] - my_EM[k][2]}')
 
 ##########################
 
@@ -88,15 +91,17 @@ def load_gmm(filename):
 #my_LBG, n_GMM = gmm.LBG_algo(X_4D, 0.1, 4, messages_LBG= True)#, messages_EM= True)
 #print('mine')
 #print(my_LBG)
+#prof_LBG = load_gmm('labs/lab10/GMM_4D_4G_EM_LBG.json')
 #print('##############  GMM_LBG ######################')
 #for k in range(4):
 #    print(f'---{k}---')
 #    print(f'w: {my_LBG[k][0]}')
 #    print(f'mu: {my_LBG[k][1]}')
 #    print(f'cov: {my_LBG[k][2]}')
-#prof_LBG = load_gmm('labs/lab10/GMM_4D_4G_EM_LBG.json')
-#print('prof')
-#print(prof_LBG)#
+#    print(f'---{k}---')
+#    print(f'w_err: {prof_LBG[k][0] - my_LBG[k][0]}')
+#    print(f'mu_err: {prof_LBG[k][1] - my_LBG[k][1]}')
+#    print(f'cov_err: {prof_LBG[k][2] - my_LBG[k][2]}')
 
 #X_1D = np.load('labs/lab10/GMM_data_1D.npy')
 #print(X_1D.shape)
@@ -115,7 +120,6 @@ def load_gmm(filename):
 #_, ll_LBG = gmm.log_pdf_GMM(x_plot, prof_LBG, n_GMM)
 #plt.plot(x_plot.T, np.exp(ll_LBG), ls= 'dotted')
 #plt.show()
-
 
 ################################################
 
@@ -216,24 +220,26 @@ def load_gmm(filename):
 #    [(pre.PCA, [50])],
 #    ])
 
+##################
 
-D_BASE = np.load('data_npy\\DTR_language.npy')
-L = np.load('data_npy\\LTR_language.npy')
 
-N_CLASS = 2
-M_BASE, NTR = D_BASE.shape
-
-model = gmm.GMMClassifier(D_BASE, L, 0.1, 4, 0.01, '', True, messages_LBG= True)
-
-GMMs = model.getGMMs()
-
-for K in range(2):
-    for NN in range(3):
-        print('----------------------------------------------------------------------------------')
-        print('----------------------------------------------------------------------------------')
-        print(f'nG: {GMMs[K][NN][1]}')
-        for NNN in range(GMMs[K][NN][1]):
-            print('----------------------------------------------------------------------------------')
-            print(GMMs[K][NN][0][0][0])
-            print(GMMs[K][NN][0][0][1])
-            print(GMMs[K][NN][0][0][2])
+#D_BASE = np.load('data_npy\\DTR_language.npy')
+#L = np.load('data_npy\\LTR_language.npy')
+#
+#N_CLASS = 2
+#M_BASE, NTR = D_BASE.shape
+#
+#model = gmm.GMMClassifier(D_BASE, L, 0.1, 4, 0.01, '', True, messages_LBG= True)
+#
+#GMMs = model.getGMMs()
+#
+#for K in range(2):
+#    for NN in range(3):
+#        print('----------------------------------------------------------------------------------')
+#        print('----------------------------------------------------------------------------------')
+#        print(f'nG: {GMMs[K][NN][1]}')
+#        for NNN in range(GMMs[K][NN][1]):
+#            print('----------------------------------------------------------------------------------')
+#            print(GMMs[K][NN][0][0][0])
+#            print(GMMs[K][NN][0][0][1])
+#            print(GMMs[K][NN][0][0][2])

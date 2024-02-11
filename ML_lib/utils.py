@@ -1,6 +1,7 @@
 import os
 import numpy as np
 import time
+from tqdm import tqdm
 
 from math import ceil
 
@@ -177,7 +178,7 @@ def cross_validation_base(D, L, classifier_class, n_folds= 10, prepro_class= Non
     predictions = []
     if ret_scores: scores = []
 
-    for i_test in range(n_folds):
+    for i_test in tqdm(range(n_folds)):
         DTR = D_folds.copy()
         LTR = L_folds.copy()
         DTE = DTR.pop(i_test)
@@ -207,7 +208,7 @@ def cross_validation_base(D, L, classifier_class, n_folds= 10, prepro_class= Non
     return np.hstack(LTE), np.hstack(predictions)
 
 
-def get_metrics(scores, labels, p1= 0.5, Cfp= 1, Cfn= 1, print_err= False, ret_string= False):
+def get_metrics(scores, labels, p1= 0.5, Cfp= 1, Cfn= 1, print_err= False, ret_all= False):
     
     assigned = (scores > getBayesThreshold(p1, Cfp, Cfn)).astype(int)
 
@@ -215,11 +216,14 @@ def get_metrics(scores, labels, p1= 0.5, Cfp= 1, Cfn= 1, print_err= False, ret_s
 
     FNR = (assigned[labels==1]==0).sum() / (labels==1).sum()
     FPR = (assigned[labels==0]==1).sum() / (labels==0).sum()
-    
-    if print_err: print_string = str('normDCF(%.1f, %d, %d): %.3f  -  minNormDCF: %.3f  -  err: %.1f' % (p1, Cfp, Cfn, normalizedDCF(p1, Cfp, Cfn, FPR, FNR), getMinNormDCF(scores, labels, p1, Cfp, Cfn), error_rate))
-    else: print_string = str('normDCF(%.1f, %d, %d): %.3f  -  minNormDCF: %.3f' % (p1, Cfp, Cfn, normalizedDCF(p1, Cfp, Cfn, FPR, FNR), getMinNormDCF(scores, labels, p1, Cfp, Cfn)))
 
-    if ret_string: return print_string
+    nDCF = normalizedDCF(p1, Cfp, Cfn, FPR, FNR)
+    minDCF = getMinNormDCF(scores, labels, p1, Cfp, Cfn)
+    
+    if print_err: print_string = str('normDCF(%.1f, %d, %d): %.3f  -  minNormDCF: %.3f  -  err: %.1f' % (p1, Cfp, Cfn, nDCF, minDCF, error_rate))
+    else: print_string = str('normDCF(%.1f, %d, %d): %.3f  -  minNormDCF: %.3f' % (p1, Cfp, Cfn, nDCF, minDCF))
+
+    if ret_all: return print_string, nDCF, minDCF, FPR, FNR
     else: print(print_string)
 
 def cross_validation(DTR_in, LTR_in, n_split, model, model_params, prepro= [[]], effective= [0.5], progress= False, save= False, filename= 'results\\cross_vall_no_name.txt', print_err= False, model_params_print= None):
@@ -317,11 +321,16 @@ def cross_validation(DTR_in, LTR_in, n_split, model, model_params, prepro= [[]],
                 spec += str(model_params_print[i_mp])
                 i_mp += 1
 
-            print_string = spec + '\n'
-            for eff in effective: print_string += str('\n\t' + get_metrics(scores, considered, eff, 1, 1, print_err= print_err, ret_string= True))
+            print_string = str(spec.ljust(70))
+            save_string = str(spec.ljust(70))
+            for eff in effective:
+                p_string, nDCF, minDCF, FPR, FNR = get_metrics(scores, considered, eff, 1, 1, print_err= print_err, ret_all= True)
+                print_string += str(' - %.2f: %.3f, %.3f (%.1f, %.1f) |' % (eff, nDCF, minDCF, FPR, FNR))
+                save_string += str(' - minDCF(%.2f): %.3f' % (eff, minDCF))
             
             print(print_string)
-            if save: f.write(print_string + '\n')
+            if save: f.write(save_string)
+        if save: f.write('\n')
 
     if save: f.close()
 

@@ -13,7 +13,7 @@ def getCrossEntropy(D, L, hyp, pT= False, retPrime= False):
         b = params[-1]
         summ_0 = (np.logaddexp(0, -Z[L==0]*(w.T @ D[:, L==0] + b))).sum()
         summ_1 = (np.logaddexp(0, -Z[L==1]*(w.T @ D[:, L==1] + b))).sum()
-        if type(pT) == bool: summ = (hyp * np.linalg.norm(w)**2 / 2) + (summ_0 + summ_1) / N
+        if type(pT) == bool: summ = (hyp * np.linalg.norm(w)**2 / 2) + summ_0 + summ_1
         else : summ = (hyp * np.linalg.norm(w)**2 / 2) + (summ_0 * (1 - pT) / D[:, L==0].shape[1]) + (summ_1 * pT / D[:, L==1].shape[1])
         if retPrime: return summ, [...]
         return summ

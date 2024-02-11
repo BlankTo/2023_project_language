@@ -1,0 +1,149 @@
+NoTransform with []   -- params: []                                   - minDCF(0.20): 0.301 - minDCF(0.50): 0.128 - minDCF(0.80): 0.170
+NoTransform with []   -- params: [naive, ]                            - minDCF(0.20): 0.330 - minDCF(0.50): 0.137 - minDCF(0.80): 0.175
+NoTransform with []   -- params: [tied, ]                             - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+NoTransform with []   -- params: [naive-tied, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.496 - minDCF(0.80): 0.534
+
+Standardizer with []   -- params: []                                  - minDCF(0.20): 0.301 - minDCF(0.50): 0.128 - minDCF(0.80): 0.170
+Standardizer with []   -- params: [naive, ]                           - minDCF(0.20): 0.330 - minDCF(0.50): 0.137 - minDCF(0.80): 0.175
+Standardizer with []   -- params: [tied, ]                            - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+Standardizer with []   -- params: [naive-tied, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.496 - minDCF(0.80): 0.534
+
+Gaussianizer with []   -- params: []                                  - minDCF(0.20): 0.324 - minDCF(0.50): 0.130 - minDCF(0.80): 0.182
+Gaussianizer with []   -- params: [naive, ]                           - minDCF(0.20): 0.338 - minDCF(0.50): 0.136 - minDCF(0.80): 0.182
+Gaussianizer with []   -- params: [tied, ]                            - minDCF(0.20): 1.002 - minDCF(0.50): 0.611 - minDCF(0.80): 0.694
+Gaussianizer with []   -- params: [naive-tied, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.512 - minDCF(0.80): 0.567
+
+Standardizer with []  PCA with [5]   -- params: []                    - minDCF(0.20): 0.304 - minDCF(0.50): 0.124 - minDCF(0.80): 0.167
+Standardizer with []  PCA with [5]   -- params: [naive, ]             - minDCF(0.20): 0.339 - minDCF(0.50): 0.142 - minDCF(0.80): 0.189
+Standardizer with []  PCA with [5]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.507 - minDCF(0.80): 0.542
+Standardizer with []  PCA with [5]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.509 - minDCF(0.80): 0.542
+
+Standardizer with []  PCA with [4]   -- params: []                    - minDCF(0.20): 0.361 - minDCF(0.50): 0.138 - minDCF(0.80): 0.173
+Standardizer with []  PCA with [4]   -- params: [naive, ]             - minDCF(0.20): 0.372 - minDCF(0.50): 0.151 - minDCF(0.80): 0.201
+Standardizer with []  PCA with [4]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.489 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.489 - minDCF(0.80): 0.504
+
+Standardizer with []  PCA with [3]   -- params: []                    - minDCF(0.20): 0.378 - minDCF(0.50): 0.138 - minDCF(0.80): 0.176
+Standardizer with []  PCA with [3]   -- params: [naive, ]             - minDCF(0.20): 0.370 - minDCF(0.50): 0.144 - minDCF(0.80): 0.181
+Standardizer with []  PCA with [3]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.561
+Standardizer with []  PCA with [3]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.561
+
+Gaussianizer with []  PCA with [5]   -- params: []                    - minDCF(0.20): 0.328 - minDCF(0.50): 0.128 - minDCF(0.80): 0.181
+Gaussianizer with []  PCA with [5]   -- params: [naive, ]             - minDCF(0.20): 0.344 - minDCF(0.50): 0.143 - minDCF(0.80): 0.195
+Gaussianizer with []  PCA with [5]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.576 - minDCF(0.80): 0.679
+Gaussianizer with []  PCA with [5]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.571 - minDCF(0.80): 0.673
+
+Gaussianizer with []  PCA with [4]   -- params: []                    - minDCF(0.20): 0.353 - minDCF(0.50): 0.142 - minDCF(0.80): 0.173
+Gaussianizer with []  PCA with [4]   -- params: [naive, ]             - minDCF(0.20): 0.362 - minDCF(0.50): 0.146 - minDCF(0.80): 0.213
+Gaussianizer with []  PCA with [4]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.525 - minDCF(0.80): 0.618
+Gaussianizer with []  PCA with [4]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.523 - minDCF(0.80): 0.615
+
+Gaussianizer with []  PCA with [3]   -- params: []                    - minDCF(0.20): 0.368 - minDCF(0.50): 0.145 - minDCF(0.80): 0.180
+Gaussianizer with []  PCA with [3]   -- params: [naive, ]             - minDCF(0.20): 0.371 - minDCF(0.50): 0.148 - minDCF(0.80): 0.183
+Gaussianizer with []  PCA with [3]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.522 - minDCF(0.80): 0.586
+Gaussianizer with []  PCA with [3]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.521 - minDCF(0.80): 0.586
+
+LDA with [1]   -- params: []                                          - minDCF(0.20): 0.930 - minDCF(0.50): 0.363 - minDCF(0.80): 0.449
+LDA with [1]   -- params: [naive, ]                                   - minDCF(0.20): 0.930 - minDCF(0.50): 0.363 - minDCF(0.80): 0.449
+LDA with [1]   -- params: [tied, ]                                    - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [naive-tied, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+
+NoTransform with []   -- params: []                                   - minDCF(0.20): 0.301 - minDCF(0.50): 0.128 - minDCF(0.80): 0.170
+NoTransform with []   -- params: [naive, ]                            - minDCF(0.20): 0.330 - minDCF(0.50): 0.137 - minDCF(0.80): 0.175
+NoTransform with []   -- params: [tied, ]                             - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+NoTransform with []   -- params: [naive-tied, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.496 - minDCF(0.80): 0.534
+
+Standardizer with []   -- params: []                                  - minDCF(0.20): 0.301 - minDCF(0.50): 0.128 - minDCF(0.80): 0.170
+Standardizer with []   -- params: [naive, ]                           - minDCF(0.20): 0.330 - minDCF(0.50): 0.137 - minDCF(0.80): 0.175
+Standardizer with []   -- params: [tied, ]                            - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+Standardizer with []   -- params: [naive-tied, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.496 - minDCF(0.80): 0.534
+
+Gaussianizer with []   -- params: []                                  - minDCF(0.20): 0.324 - minDCF(0.50): 0.130 - minDCF(0.80): 0.182
+Gaussianizer with []   -- params: [naive, ]                           - minDCF(0.20): 0.338 - minDCF(0.50): 0.136 - minDCF(0.80): 0.182
+Gaussianizer with []   -- params: [tied, ]                            - minDCF(0.20): 1.002 - minDCF(0.50): 0.611 - minDCF(0.80): 0.694
+Gaussianizer with []   -- params: [naive-tied, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.512 - minDCF(0.80): 0.567
+
+Standardizer with []  PCA with [5]   -- params: []                    - minDCF(0.20): 0.304 - minDCF(0.50): 0.124 - minDCF(0.80): 0.167
+Standardizer with []  PCA with [5]   -- params: [naive, ]             - minDCF(0.20): 0.339 - minDCF(0.50): 0.142 - minDCF(0.80): 0.189
+Standardizer with []  PCA with [5]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.507 - minDCF(0.80): 0.542
+Standardizer with []  PCA with [5]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.509 - minDCF(0.80): 0.542
+
+Standardizer with []  PCA with [4]   -- params: []                    - minDCF(0.20): 0.361 - minDCF(0.50): 0.138 - minDCF(0.80): 0.173
+Standardizer with []  PCA with [4]   -- params: [naive, ]             - minDCF(0.20): 0.372 - minDCF(0.50): 0.151 - minDCF(0.80): 0.201
+Standardizer with []  PCA with [4]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.489 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.489 - minDCF(0.80): 0.504
+
+Standardizer with []  PCA with [3]   -- params: []                    - minDCF(0.20): 0.378 - minDCF(0.50): 0.138 - minDCF(0.80): 0.176
+Standardizer with []  PCA with [3]   -- params: [naive, ]             - minDCF(0.20): 0.370 - minDCF(0.50): 0.144 - minDCF(0.80): 0.181
+Standardizer with []  PCA with [3]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.561
+Standardizer with []  PCA with [3]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.561
+
+Gaussianizer with []  PCA with [5]   -- params: []                    - minDCF(0.20): 0.328 - minDCF(0.50): 0.128 - minDCF(0.80): 0.181
+Gaussianizer with []  PCA with [5]   -- params: [naive, ]             - minDCF(0.20): 0.344 - minDCF(0.50): 0.143 - minDCF(0.80): 0.195
+Gaussianizer with []  PCA with [5]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.576 - minDCF(0.80): 0.679
+Gaussianizer with []  PCA with [5]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.571 - minDCF(0.80): 0.673
+
+Gaussianizer with []  PCA with [4]   -- params: []                    - minDCF(0.20): 0.353 - minDCF(0.50): 0.142 - minDCF(0.80): 0.173
+Gaussianizer with []  PCA with [4]   -- params: [naive, ]             - minDCF(0.20): 0.362 - minDCF(0.50): 0.146 - minDCF(0.80): 0.213
+Gaussianizer with []  PCA with [4]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.525 - minDCF(0.80): 0.618
+Gaussianizer with []  PCA with [4]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.523 - minDCF(0.80): 0.615
+
+Gaussianizer with []  PCA with [3]   -- params: []                    - minDCF(0.20): 0.368 - minDCF(0.50): 0.145 - minDCF(0.80): 0.180
+Gaussianizer with []  PCA with [3]   -- params: [naive, ]             - minDCF(0.20): 0.371 - minDCF(0.50): 0.148 - minDCF(0.80): 0.183
+Gaussianizer with []  PCA with [3]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.522 - minDCF(0.80): 0.586
+Gaussianizer with []  PCA with [3]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.521 - minDCF(0.80): 0.586
+
+LDA with [1]   -- params: []                                          - minDCF(0.20): 0.930 - minDCF(0.50): 0.363 - minDCF(0.80): 0.449
+LDA with [1]   -- params: [naive, ]                                   - minDCF(0.20): 0.930 - minDCF(0.50): 0.363 - minDCF(0.80): 0.449
+LDA with [1]   -- params: [tied, ]                                    - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [naive-tied, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+
+NoTransform with []   -- params: []                                   - minDCF(0.20): 0.301 - minDCF(0.50): 0.128 - minDCF(0.80): 0.170
+NoTransform with []   -- params: [naive, ]                            - minDCF(0.20): 0.330 - minDCF(0.50): 0.137 - minDCF(0.80): 0.175
+NoTransform with []   -- params: [tied, ]                             - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+NoTransform with []   -- params: [naive-tied, ]                       - minDCF(0.20): 1.002 - minDCF(0.50): 0.496 - minDCF(0.80): 0.534
+
+Standardizer with []   -- params: []                                  - minDCF(0.20): 0.301 - minDCF(0.50): 0.128 - minDCF(0.80): 0.170
+Standardizer with []   -- params: [naive, ]                           - minDCF(0.20): 0.330 - minDCF(0.50): 0.137 - minDCF(0.80): 0.175
+Standardizer with []   -- params: [tied, ]                            - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+Standardizer with []   -- params: [naive-tied, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.496 - minDCF(0.80): 0.534
+
+Gaussianizer with []   -- params: []                                  - minDCF(0.20): 0.324 - minDCF(0.50): 0.130 - minDCF(0.80): 0.182
+Gaussianizer with []   -- params: [naive, ]                           - minDCF(0.20): 0.338 - minDCF(0.50): 0.136 - minDCF(0.80): 0.182
+Gaussianizer with []   -- params: [tied, ]                            - minDCF(0.20): 1.002 - minDCF(0.50): 0.611 - minDCF(0.80): 0.694
+Gaussianizer with []   -- params: [naive-tied, ]                      - minDCF(0.20): 1.002 - minDCF(0.50): 0.512 - minDCF(0.80): 0.567
+
+Standardizer with []  PCA with [5]   -- params: []                    - minDCF(0.20): 0.304 - minDCF(0.50): 0.124 - minDCF(0.80): 0.167
+Standardizer with []  PCA with [5]   -- params: [naive, ]             - minDCF(0.20): 0.339 - minDCF(0.50): 0.142 - minDCF(0.80): 0.189
+Standardizer with []  PCA with [5]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.507 - minDCF(0.80): 0.542
+Standardizer with []  PCA with [5]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.509 - minDCF(0.80): 0.542
+
+Standardizer with []  PCA with [4]   -- params: []                    - minDCF(0.20): 0.361 - minDCF(0.50): 0.138 - minDCF(0.80): 0.173
+Standardizer with []  PCA with [4]   -- params: [naive, ]             - minDCF(0.20): 0.372 - minDCF(0.50): 0.151 - minDCF(0.80): 0.201
+Standardizer with []  PCA with [4]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.489 - minDCF(0.80): 0.506
+Standardizer with []  PCA with [4]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.489 - minDCF(0.80): 0.504
+
+Standardizer with []  PCA with [3]   -- params: []                    - minDCF(0.20): 0.378 - minDCF(0.50): 0.138 - minDCF(0.80): 0.176
+Standardizer with []  PCA with [3]   -- params: [naive, ]             - minDCF(0.20): 0.370 - minDCF(0.50): 0.144 - minDCF(0.80): 0.181
+Standardizer with []  PCA with [3]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.561
+Standardizer with []  PCA with [3]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.510 - minDCF(0.80): 0.561
+
+Gaussianizer with []  PCA with [5]   -- params: []                    - minDCF(0.20): 0.328 - minDCF(0.50): 0.128 - minDCF(0.80): 0.181
+Gaussianizer with []  PCA with [5]   -- params: [naive, ]             - minDCF(0.20): 0.344 - minDCF(0.50): 0.143 - minDCF(0.80): 0.195
+Gaussianizer with []  PCA with [5]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.576 - minDCF(0.80): 0.679
+Gaussianizer with []  PCA with [5]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.571 - minDCF(0.80): 0.673
+
+Gaussianizer with []  PCA with [4]   -- params: []                    - minDCF(0.20): 0.353 - minDCF(0.50): 0.142 - minDCF(0.80): 0.173
+Gaussianizer with []  PCA with [4]   -- params: [naive, ]             - minDCF(0.20): 0.362 - minDCF(0.50): 0.146 - minDCF(0.80): 0.213
+Gaussianizer with []  PCA with [4]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.525 - minDCF(0.80): 0.618
+Gaussianizer with []  PCA with [4]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.523 - minDCF(0.80): 0.615
+
+Gaussianizer with []  PCA with [3]   -- params: []                    - minDCF(0.20): 0.368 - minDCF(0.50): 0.145 - minDCF(0.80): 0.180
+Gaussianizer with []  PCA with [3]   -- params: [naive, ]             - minDCF(0.20): 0.371 - minDCF(0.50): 0.148 - minDCF(0.80): 0.183
+Gaussianizer with []  PCA with [3]   -- params: [tied, ]              - minDCF(0.20): 1.002 - minDCF(0.50): 0.522 - minDCF(0.80): 0.586
+Gaussianizer with []  PCA with [3]   -- params: [naive-tied, ]        - minDCF(0.20): 1.002 - minDCF(0.50): 0.521 - minDCF(0.80): 0.586
+
+LDA with [1]   -- params: []                                          - minDCF(0.20): 0.930 - minDCF(0.50): 0.363 - minDCF(0.80): 0.449
+LDA with [1]   -- params: [naive, ]                                   - minDCF(0.20): 0.930 - minDCF(0.50): 0.363 - minDCF(0.80): 0.449
+LDA with [1]   -- params: [tied, ]                                    - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
+LDA with [1]   -- params: [naive-tied, ]                              - minDCF(0.20): 1.002 - minDCF(0.50): 0.516 - minDCF(0.80): 0.549
