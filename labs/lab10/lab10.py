@@ -124,44 +124,60 @@ def load_gmm(filename):
 ################################################
 
 
-#D, L, label_dict = utils.csv_to_npy('data_raw/iris.csv')
-#DTR, LTR, DTE, LTE = utils.shuffle_and_divide(D, L, 2.0/3.0, 0)
-#print(DTR.shape)
-#print(LTR.shape)
-#print(DTE.shape)
-#print(LTE.shape)
-#print('-----------------------')
-#
-#for variant in ['', 'naive', 'tied']:
-#    print(f'########### {variant} ###########')
-#    GMM_class_0 = gmm.LBG_algo(DTR[:, LTR==0], 0.1, 16, bound= 0.01, retAll= True, variant= variant)
-#    GMM_class_1 = gmm.LBG_algo(DTR[:, LTR==1], 0.1, 16, bound= 0.01, retAll= True, variant= variant)
-#    GMM_class_2 = gmm.LBG_algo(DTR[:, LTR==2], 0.1, 16, bound= 0.01, retAll= True, variant= variant)
-#    #for kkk in range(5):
-#    #    print(f'n_GMM: {GMM_class_0[kkk][1]}')
-#    #    for i_gmm in range(GMM_class_0[kkk][1]):
-#    #        print(f'w: {GMM_class_0[kkk][0][i_gmm][0]}')
-#    #        print(f'mu: {GMM_class_0[kkk][0][i_gmm][1]}')
-#    #        print(f'cov: {GMM_class_0[kkk][0][i_gmm][2]}')
-#    #exit()
-#
-#    for kk in range(5):
-#        n_GMM = GMM_class_0[kk][1]
-#        print(f'n_GMM: {n_GMM}')
-#        gmm_class_0 = GMM_class_0[kk][0]
-#        gmm_class_1 = GMM_class_1[kk][0]
-#        gmm_class_2 = GMM_class_2[kk][0]
-#
-#        _, ll_class_0 = gmm.log_pdf_GMM(DTE, gmm_class_0, n_GMM)
-#        _, ll_class_1 = gmm.log_pdf_GMM(DTE, gmm_class_1, n_GMM)
-#        _, ll_class_2 = gmm.log_pdf_GMM(DTE, gmm_class_2, n_GMM)
-#
-#        lls = np.vstack([ll_class_0, ll_class_1, ll_class_2])
-#        pred = lls.argmax(axis= 0)
-#        correct = (pred == LTE).sum()
-#        print((LTE.size - correct) * 100 / LTE.size)
+D, L, label_dict = utils.csv_to_npy('data_raw/iris.csv')
+DTR, LTR, DTE, LTE = utils.shuffle_and_divide(D, L, 2.0/3.0, 0)
+print(DTR.shape)
+print(LTR.shape)
+print(DTE.shape)
+print(LTE.shape)
+print('-----------------------')
 
+for variant in ['']: #, 'naive', 'tied']:
+    print(f'########### {variant} ###########')
+    GMM_class_0 = gmm.LBG_algo(DTR[:, LTR==0], 0.1, 16, bound= 0.01, retAll= True, variant= variant)
+    GMM_class_1 = gmm.LBG_algo(DTR[:, LTR==1], 0.1, 16, bound= 0.01, retAll= True, variant= variant)
+    GMM_class_2 = gmm.LBG_algo(DTR[:, LTR==2], 0.1, 16, bound= 0.01, retAll= True, variant= variant)
+    #for kkk in range(5):
+    #    print(f'n_GMM: {GMM_class_0[kkk][1]}')
+    #    for i_gmm in range(GMM_class_0[kkk][1]):
+    #        print(f'w: {GMM_class_0[kkk][0][i_gmm][0]}')
+    #        print(f'mu: {GMM_class_0[kkk][0][i_gmm][1]}')
+    #        print(f'cov: {GMM_class_0[kkk][0][i_gmm][2]}')
+    #exit()
 
+    for kk in range(5):
+        n_GMM = GMM_class_0[kk][1]
+        print(f'n_GMM: {n_GMM}')
+        gmm_class_0 = GMM_class_0[kk][0]
+        gmm_class_1 = GMM_class_1[kk][0]
+        gmm_class_2 = GMM_class_2[kk][0]
+
+        _, ll_class_0 = gmm.log_pdf_GMM(DTE, gmm_class_0, n_GMM)
+        _, ll_class_1 = gmm.log_pdf_GMM(DTE, gmm_class_1, n_GMM)
+        _, ll_class_2 = gmm.log_pdf_GMM(DTE, gmm_class_2, n_GMM)
+
+        lls = np.vstack([ll_class_0, ll_class_1, ll_class_2])
+        pred = lls.argmax(axis= 0)
+        correct = (pred == LTE).sum()
+        print((LTE.size - correct) * 100 / LTE.size)
+
+lls = gmm.GMMClassifier(DTR, LTR, 0.1, [2], bound= 0.01, variant= '', messages_LBG= True).get_lls(DTE)
+print(lls.shape)
+pred = lls.argmax(axis= 0)
+correct = (pred == LTE).sum()
+print((LTE.size - correct) * 100 / LTE.size)
+
+llss = gmm.GMMClassifier(DTR, LTR, 0.1, [4], retAll= True, bound= 0.01, variant= '', messages_LBG= True).get_lls_all(DTE)
+
+print(len(llss[0]))
+for i in range(len(llss[0])):
+
+    print(f'nG: {llss[0][i][1]}')
+    lls = np.vstack([llss[k][i][0] for k in range(len(llss))])
+
+    pred = lls.argmax(axis= 0)
+    correct = (pred == LTE).sum()
+    print((LTE.size - correct) * 100 / LTE.size)
 
 ##################################
 
@@ -215,8 +231,8 @@ def load_gmm(filename):
 #print(L.shape)
 #
 #utils.cross_validation(D, L, 10, gmm.GMMClassifier, [[0.1, n_max_GMM, 0.01, '', False, True]], progress= True, prepro= [
-##    [(pre.NoTransform, [])],
-##    [(pre.Gaussianizer, [])],
+#    [(pre.NoTransform, [])],
+#    [(pre.Gaussianizer, [])],
 #    [(pre.PCA, [50])],
 #    ])
 
