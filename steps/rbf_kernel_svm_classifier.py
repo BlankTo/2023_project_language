@@ -18,37 +18,37 @@ M_BASE, NTR = D_BASE.shape
 DTR_base, LTR, DTE_base, LTE = utils.shuffle_and_divide(D_BASE, L, 2/3)
 
 K = 0
-prior = 0.5
+prior = None
 exp_range = range(-3, 2)
 lambda_range = [10 ** C_exp for C_exp in exp_range]
 
-plt.figure()
-
-for lam in lambda_range:
-    
-    res_02 = []
-    res_05 = []
-    res_08 = []
-
-    exp_range = range(-5, 3)
-    C_range = [10 ** C_exp for C_exp in exp_range]
-
-    for C in C_range:
-
-        print((lam, C))
-
-        scores = svm.SupportVectorMachine(DTR_base, LTR, K, C, svm.get_kernel_RBF(lam, K**2), None if prior is None else [1 - prior, prior]).getScores(DTE_base)
-        _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.5, 1, 1, ret_all= True)
-        res_05.append(minDCF)
-
-    plt.plot(C_range, res_05, label= f'lam: {lam}')
-
-plt.title(f'No Prepro - prior: {prior}')
-plt.xscale('log')
-plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
-plt.legend()
-plt.grid()
-#plt.show()
+#plt.figure()
+#
+#for lam in lambda_range:
+#    
+#    res_02 = []
+#    res_05 = []
+#    res_08 = []
+#
+#    exp_range = range(-5, 3)
+#    C_range = [10 ** C_exp for C_exp in exp_range]
+#
+#    for C in C_range:
+#
+#        print((lam, C))
+#
+#        scores = svm.SupportVectorMachine(DTR_base, LTR, K, C, svm.get_kernel_RBF(lam, K**2), None if prior is None else [1 - prior, prior]).getScores(DTE_base)
+#        _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.5, 1, 1, ret_all= True)
+#        res_05.append(minDCF)
+#
+#    plt.plot(C_range, res_05, label= f'lam: {lam}')
+#
+#plt.title(f'No Prepro - prior: {prior}')
+#plt.xscale('log')
+#plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
+#plt.legend()
+#plt.grid()
+##plt.show()
 
 ######
     
@@ -154,40 +154,40 @@ plt.xscale('log')
 plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
 plt.legend()
 plt.grid()
-plt.show()
+#plt.show()
 
 #######
     # Cross val
 #######
 
-plt.figure()
-    
-for lam in lambda_range:
-    
-    res_02 = []
-    res_05 = []
-    res_08 = []
-
-    exp_range = range(-5, 3)
-    C_range = [10 ** C_exp for C_exp in exp_range]
-
-    for C in C_range:
-
-        print((lam, C))
-
-        LTE_cross, _, scores = utils.cross_validation_base(D_BASE, L, svm.SupportVectorMachine, 10, None, None, 0, [K, C, svm.get_kernel_RBF(lam, K**2), None] if prior is None else [K, C, svm.get_kernel_RBF(lam, K**2), [1 - prior, prior]], True)
-
-        _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.5, 1, 1, ret_all= True)
-        res_05.append(minDCF)
-
-    plt.plot(C_range, res_05, label= f'lam: {lam}')
-    
-plt.title(f'Cross Val 10 No Prepro - prior: {prior}')
-plt.xscale('log')
-plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
-plt.legend()
-plt.grid()
-#plt.show()
+#plt.figure()
+#    
+#for lam in lambda_range:
+#    
+#    res_02 = []
+#    res_05 = []
+#    res_08 = []
+#
+#    exp_range = range(-5, 3)
+#    C_range = [10 ** C_exp for C_exp in exp_range]
+#
+#    for C in C_range:
+#
+#        print((lam, C))
+#
+#        LTE_cross, _, scores = utils.cross_validation_base(D_BASE, L, svm.SupportVectorMachine, 10, None, None, 0, [K, C, svm.get_kernel_RBF(lam, K**2), None] if prior is None else [K, C, svm.get_kernel_RBF(lam, K**2), [1 - prior, prior]], True)
+#
+#        _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.5, 1, 1, ret_all= True)
+#        res_05.append(minDCF)
+#
+#    plt.plot(C_range, res_05, label= f'lam: {lam}')
+#    
+#plt.title(f'Cross Val 10 No Prepro - prior: {prior}')
+#plt.xscale('log')
+#plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
+#plt.legend()
+#plt.grid()
+##plt.show()
 
 #######
 

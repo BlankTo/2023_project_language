@@ -17,37 +17,44 @@ M_BASE, NTR = D_BASE.shape
 
 DTR_base, LTR, DTE_base, LTE = utils.shuffle_and_divide(D_BASE, L, 2/3)
 
+K = 0
+
 for prior in [0.5, None]: #[0.2, 0.5, 0.8]:
     
     res_02 = []
     res_05 = []
     res_08 = []
 
-    exp_range = range(-5, 3)
+    exp_range = range(-4, -3)
     C_range = [10 ** C_exp for C_exp in exp_range]
 
     for C in C_range:
 
+        print('Base')
+
         print((prior, C))
 
-        scores = svm.SupportVectorMachine(DTR_base, LTR, 0, C, None, None if prior is None else [1 - prior, prior]).getScores(DTE_base)
+        scores = svm.SupportVectorMachine(DTR_base, LTR, K, C, None, None if prior is None else [1 - prior, prior]).getScores(DTE_base)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.2, 1, 1, ret_all= True)
+        print(f'minDCF(0.2): {minDCF}')
         res_02.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.5, 1, 1, ret_all= True)
+        print(f'minDCF(0.5): {minDCF}')
         res_05.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.8, 1, 1, ret_all= True)
+        print(f'minDCF(0.8): {minDCF}')
         res_08.append(minDCF)
 
-    plt.figure()
-    plt.plot(C_range, res_02, label= 'eff: 0.2')
-    plt.plot(C_range, res_05, label= 'eff: 0.5')
-    plt.plot(C_range, res_08, label= 'eff: 0.8')
-    plt.title(f'No Prepro - prior: {prior}')
-    plt.xscale('log')
-    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
-    plt.legend()
-    plt.grid()
-    #plt.show()
+#    plt.figure()
+#    plt.plot(C_range, res_02, label= 'eff: 0.2')
+#    plt.plot(C_range, res_05, label= 'eff: 0.5')
+#    plt.plot(C_range, res_08, label= 'eff: 0.8')
+#    plt.title(f'No Prepro - prior: {prior}')
+#    plt.xscale('log')
+#    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
+#    plt.legend()
+#    plt.grid()
+#    #plt.show()
 
 ######
     
@@ -61,31 +68,36 @@ for prior in [0.5, None]: #[0.2, 0.5, 0.8]:
     res_05 = []
     res_08 = []
 
-    exp_range = range(-5, 3)
+    exp_range = range(-4, -3)
     C_range = [10 ** C_exp for C_exp in exp_range]
 
     for C in C_range:
 
+        print('PCA 5')
+
         print((prior, C))
 
-        scores = svm.SupportVectorMachine(DTR, LTR, 0, C, None, None if prior is None else [1 - prior, prior]).getScores(DTE)
+        scores = svm.SupportVectorMachine(DTR, LTR, K, C, None, None if prior is None else [1 - prior, prior]).getScores(DTE)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.2, 1, 1, ret_all= True)
+        print(f'minDCF(0.2): {minDCF}')
         res_02.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.5, 1, 1, ret_all= True)
+        print(f'minDCF(0.5): {minDCF}')
         res_05.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.8, 1, 1, ret_all= True)
+        print(f'minDCF(0.8): {minDCF}')
         res_08.append(minDCF)
 
-    plt.figure()
-    plt.plot(C_range, res_02, label= 'eff: 0.2')
-    plt.plot(C_range, res_05, label= 'eff: 0.5')
-    plt.plot(C_range, res_08, label= 'eff: 0.8')
-    plt.title(f'PCA 5 - prior: {prior}')
-    plt.xscale('log')
-    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
-    plt.legend()
-    plt.grid()
-    #plt.show()
+#    plt.figure()
+#    plt.plot(C_range, res_02, label= 'eff: 0.2')
+#    plt.plot(C_range, res_05, label= 'eff: 0.5')
+#    plt.plot(C_range, res_08, label= 'eff: 0.8')
+#    plt.title(f'PCA 5 - prior: {prior}')
+#    plt.xscale('log')
+#    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
+#    plt.legend()
+#    plt.grid()
+#    #plt.show()
 
 ######
     
@@ -99,31 +111,36 @@ for prior in [0.5, None]: #[0.2, 0.5, 0.8]:
     res_05 = []
     res_08 = []
 
-    exp_range = range(-5, 3)
+    exp_range = range(-4, -3)
     C_range = [10 ** C_exp for C_exp in exp_range]
 
     for C in C_range:
 
+        print('Gaussianized')
+
         print((prior, C))
 
-        scores = svm.SupportVectorMachine(DTR, LTR, 0, C, None, None if prior is None else [1 - prior, prior]).getScores(DTE)
+        scores = svm.SupportVectorMachine(DTR, LTR, K, C, None, None if prior is None else [1 - prior, prior]).getScores(DTE)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.2, 1, 1, ret_all= True)
+        print(f'minDCF(0.2): {minDCF}')
         res_02.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.5, 1, 1, ret_all= True)
+        print(f'minDCF(0.5): {minDCF}')
         res_05.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.8, 1, 1, ret_all= True)
+        print(f'minDCF(0.8): {minDCF}')
         res_08.append(minDCF)
 
-    plt.figure()
-    plt.plot(C_range, res_02, label= 'eff: 0.2')
-    plt.plot(C_range, res_05, label= 'eff: 0.5')
-    plt.plot(C_range, res_08, label= 'eff: 0.8')
-    plt.title(f'Gaussianized - prior: {prior}')
-    plt.xscale('log')
-    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
-    plt.legend()
-    plt.grid()
-    #plt.show()
+#    plt.figure()
+#    plt.plot(C_range, res_02, label= 'eff: 0.2')
+#    plt.plot(C_range, res_05, label= 'eff: 0.5')
+#    plt.plot(C_range, res_08, label= 'eff: 0.8')
+#    plt.title(f'Gaussianized - prior: {prior}')
+#    plt.xscale('log')
+#    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
+#    plt.legend()
+#    plt.grid()
+#    #plt.show()
 
 ######
     
@@ -141,31 +158,36 @@ for prior in [0.5, None]: #[0.2, 0.5, 0.8]:
     res_05 = []
     res_08 = []
 
-    exp_range = range(-5, 3)
+    exp_range = range(-4, -3)
     C_range = [10 ** C_exp for C_exp in exp_range]
 
     for C in C_range:
 
+        print('Gaussianized PCA 5')
+
         print((prior, C))
 
-        scores = svm.SupportVectorMachine(DTR, LTR, 0, C, None, None if prior is None else [1 - prior, prior]).getScores(DTE)
+        scores = svm.SupportVectorMachine(DTR, LTR, K, C, None, None if prior is None else [1 - prior, prior]).getScores(DTE)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.2, 1, 1, ret_all= True)
+        print(f'minDCF(0.2): {minDCF}')
         res_02.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.5, 1, 1, ret_all= True)
+        print(f'minDCF(0.5): {minDCF}')
         res_05.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE, 0.8, 1, 1, ret_all= True)
+        print(f'minDCF(0.8): {minDCF}')
         res_08.append(minDCF)
 
-    plt.figure()
-    plt.plot(C_range, res_02, label= 'eff: 0.2')
-    plt.plot(C_range, res_05, label= 'eff: 0.5')
-    plt.plot(C_range, res_08, label= 'eff: 0.8')
-    plt.title(f'Gaussianized PCA 5 - prior: {prior}')
-    plt.xscale('log')
-    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
-    plt.legend()
-    plt.grid()
-    plt.show()
+#    plt.figure()
+#    plt.plot(C_range, res_02, label= 'eff: 0.2')
+#    plt.plot(C_range, res_05, label= 'eff: 0.5')
+#    plt.plot(C_range, res_08, label= 'eff: 0.8')
+#    plt.title(f'Gaussianized PCA 5 - prior: {prior}')
+#    plt.xscale('log')
+#    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
+#    plt.legend()
+#    plt.grid()
+#    plt.show()
 
 #######
     # Cross val
@@ -177,32 +199,38 @@ for prior in [0.5, None]: #[0.2, 0.5, 0.8]:
     res_05 = []
     res_08 = []
 
-    exp_range = range(-5, 3)
+    exp_range = range(-4, -3)
     C_range = [10 ** C_exp for C_exp in exp_range]
 
     for C in C_range:
 
+        print('Cross Val Base')
+
         print((prior, C))
 
-        LTE_cross, _, scores = utils.cross_validation_base(D_BASE, L, svm.SupportVectorMachine, 10, None, None, 0, [0, C, None, None] if prior is None else [0, C, None, [1 - prior, prior]], True)
-
+        LTE_cross, _, scores = utils.cross_validation_base(D_BASE, L, svm.SupportVectorMachine, 10, None, None, 0, [K, C, None, None] if prior is None else [K, C, None, [1 - prior, prior]], True)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.2, 1, 1, ret_all= True)
+        print(f'minDCF(0.2): {minDCF}')
         res_02.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.5, 1, 1, ret_all= True)
+        print(f'minDCF(0.5): {minDCF}')
         res_05.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.8, 1, 1, ret_all= True)
+        print(f'minDCF(0.8): {minDCF}')
         res_08.append(minDCF)
 
-    plt.figure()
-    plt.plot(C_range, res_02, label= 'eff: 0.2')
-    plt.plot(C_range, res_05, label= 'eff: 0.5')
-    plt.plot(C_range, res_08, label= 'eff: 0.8')
-    plt.title(f'Cross Val 10 No Prepro - prior: {prior}')
-    plt.xscale('log')
-    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
-    plt.legend()
-    plt.grid()
-    #plt.show()
+#    plt.figure()
+#    plt.plot(C_range, res_02, label= 'eff: 0.2')
+#    plt.plot(C_range, res_05, label= 'eff: 0.5')
+#    plt.plot(C_range, res_08, label= 'eff: 0.8')
+#    plt.title(f'Cross Val 10 No Prepro - prior: {prior}')
+#    plt.xscale('log')
+#    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
+#    plt.legend()
+#    plt.grid()
+#    #plt.show()
+
+#######
 
 #######
     
@@ -212,32 +240,36 @@ for prior in [0.5, None]: #[0.2, 0.5, 0.8]:
     res_05 = []
     res_08 = []
 
-    exp_range = range(-5, 3)
+    exp_range = range(-4, -3)
     C_range = [10 ** C_exp for C_exp in exp_range]
 
     for C in C_range:
 
+        print('Cross Val Gaussianized')
+
         print((prior, C))
 
-        LTE_cross, _, scores = utils.cross_validation_base(D_BASE, L, svm.SupportVectorMachine, 10, pre.Gaussianizer, [pre.PCA, 5], 0, [0, C, None, None] if prior is None else [0, C, None, [1 - prior, prior]], True)
-
+        LTE_cross, _, scores = utils.cross_validation_base(D_BASE, L, svm.SupportVectorMachine, 10, pre.Gaussianizer, None, 0, [K, C, None, None] if prior is None else [K, C, None, [1 - prior, prior]], True)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.2, 1, 1, ret_all= True)
+        print(f'minDCF(0.2): {minDCF}')
         res_02.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.5, 1, 1, ret_all= True)
+        print(f'minDCF(0.5): {minDCF}')
         res_05.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.8, 1, 1, ret_all= True)
+        print(f'minDCF(0.8): {minDCF}')
         res_08.append(minDCF)
 
-    plt.figure()
-    plt.plot(C_range, res_02, label= 'eff: 0.2')
-    plt.plot(C_range, res_05, label= 'eff: 0.5')
-    plt.plot(C_range, res_08, label= 'eff: 0.8')
-    plt.title(f'Cross Val 10 Gaussianized PCA 5 - prior: {prior}')
-    plt.xscale('log')
-    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
-    plt.legend()
-    plt.grid()
-    #plt.show()
+#    plt.figure()
+#    plt.plot(C_range, res_02, label= 'eff: 0.2')
+#    plt.plot(C_range, res_05, label= 'eff: 0.5')
+#    plt.plot(C_range, res_08, label= 'eff: 0.8')
+#    plt.title(f'Cross Val 10 Gaussianized - prior: {prior}')
+#    plt.xscale('log')
+#    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
+#    plt.legend()
+#    plt.grid()
+#    #plt.show()
 
 #######
     
@@ -247,34 +279,38 @@ for prior in [0.5, None]: #[0.2, 0.5, 0.8]:
     res_05 = []
     res_08 = []
 
-    exp_range = range(-5, 3)
+    exp_range = range(-4, -3)
     C_range = [10 ** C_exp for C_exp in exp_range]
 
     for C in C_range:
 
+        print('Cross Val PCA 5')
+
         print((prior, C))
 
-        LTE_cross, _, scores = utils.cross_validation_base(D_BASE, L, svm.SupportVectorMachine, 10, pre.Gaussianizer, None, 0, [0, C, None, None] if prior is None else [0, C, None, [1 - prior, prior]], True)
-
+        LTE_cross, _, scores = utils.cross_validation_base(D_BASE, L, svm.SupportVectorMachine, 10, None, [pre.PCA, 5], 0, [K, C, None, None] if prior is None else [K, C, None, [1 - prior, prior]], True)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.2, 1, 1, ret_all= True)
+        print(f'minDCF(0.2): {minDCF}')
         res_02.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.5, 1, 1, ret_all= True)
+        print(f'minDCF(0.5): {minDCF}')
         res_05.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.8, 1, 1, ret_all= True)
+        print(f'minDCF(0.8): {minDCF}')
         res_08.append(minDCF)
 
-    plt.figure()
-    plt.plot(C_range, res_02, label= 'eff: 0.2')
-    plt.plot(C_range, res_05, label= 'eff: 0.5')
-    plt.plot(C_range, res_08, label= 'eff: 0.8')
-    plt.title(f'Cross Val 10 Gaussianized - prior: {prior}')
-    plt.xscale('log')
-    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
-    plt.legend()
-    plt.grid()
-    #plt.show()
+#    plt.figure()
+#    plt.plot(C_range, res_02, label= 'eff: 0.2')
+#    plt.plot(C_range, res_05, label= 'eff: 0.5')
+#    plt.plot(C_range, res_08, label= 'eff: 0.8')
+#    plt.title(f'Cross Val 10 PCA 5 - prior: {prior}')
+#    plt.xscale('log')
+#    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
+#    plt.legend()
+#    plt.grid()
+#    plt.show()
 
-#######
+############
     
 for prior in [0.5, None]: #[0.2, 0.5, 0.8]:
     
@@ -282,32 +318,37 @@ for prior in [0.5, None]: #[0.2, 0.5, 0.8]:
     res_05 = []
     res_08 = []
 
-    exp_range = range(-5, 3)
+    exp_range = range(-4, -3)
     C_range = [10 ** C_exp for C_exp in exp_range]
 
     for C in C_range:
 
+        print('Cross Val Gaussianized PCA 5')
+
         print((prior, C))
 
-        LTE_cross, _, scores = utils.cross_validation_base(D_BASE, L, svm.SupportVectorMachine, 10, None, [pre.PCA, 5], 0, [0, C, None, None] if prior is None else [0, C, None, [1 - prior, prior]], True)
-
+        LTE_cross, _, scores = utils.cross_validation_base(D_BASE, L, svm.SupportVectorMachine, 10, pre.Gaussianizer, [pre.PCA, 5], 0, [K, C, None, None] if prior is None else [K, C, None, [1 - prior, prior]], True)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.2, 1, 1, ret_all= True)
+        print(f'minDCF(0.2): {minDCF}')
         res_02.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.5, 1, 1, ret_all= True)
+        print(f'minDCF(0.5): {minDCF}')
         res_05.append(minDCF)
         _, _, minDCF, _, _ = utils.get_metrics(scores, LTE_cross, 0.8, 1, 1, ret_all= True)
+        print(f'minDCF(0.8): {minDCF}')
         res_08.append(minDCF)
 
-    plt.figure()
-    plt.plot(C_range, res_02, label= 'eff: 0.2')
-    plt.plot(C_range, res_05, label= 'eff: 0.5')
-    plt.plot(C_range, res_08, label= 'eff: 0.8')
-    plt.title(f'Cross Val 10 PCA 5 - prior: {prior}')
-    plt.xscale('log')
-    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
-    plt.legend()
-    plt.grid()
-    plt.show()
+#    plt.figure()
+#    plt.plot(C_range, res_02, label= 'eff: 0.2')
+#    plt.plot(C_range, res_05, label= 'eff: 0.5')
+#    plt.plot(C_range, res_08, label= 'eff: 0.8')
+#    plt.title(f'Cross Val 10 Gaussianized PCA 5 - prior: {prior}')
+#    plt.xscale('log')
+#    plt.xticks(C_range, [f'10^{ex}' for ex in exp_range])
+#    plt.legend()
+#    plt.grid()
+#    #plt.show()
+
 
 exit(0)
 

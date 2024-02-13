@@ -23,7 +23,9 @@ for scores, nG in scores_all:
 
     print(f'nG: {nG}')
 
+    utils.get_metrics(scores, LTE, 0.2, 1, 1, print_err= True)
     utils.get_metrics(scores, LTE, 0.5, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE, 0.8, 1, 1, print_err= True)
 
 ##
 
@@ -37,7 +39,9 @@ for scores, nG in scores_all:
 
     print(f'nG: {nG}')
 
+    utils.get_metrics(scores, LTE, 0.2, 1, 1, print_err= True)
     utils.get_metrics(scores, LTE, 0.5, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE, 0.8, 1, 1, print_err= True)
 
 ##
 
@@ -51,7 +55,9 @@ for scores, nG in scores_all:
 
     print(f'nG: {nG}')
 
+    utils.get_metrics(scores, LTE, 0.2, 1, 1, print_err= True)
     utils.get_metrics(scores, LTE, 0.5, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE, 0.8, 1, 1, print_err= True)
 
 ##
 
@@ -69,7 +75,9 @@ for scores, nG in scores_all:
 
     print(f'nG: {nG}')
 
+    utils.get_metrics(scores, LTE, 0.2, 1, 1, print_err= True)
     utils.get_metrics(scores, LTE, 0.5, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE, 0.8, 1, 1, print_err= True)
 
 ######
     # cross val
@@ -81,7 +89,9 @@ LTE_cross, scores_all = gmm.cross_validation_gmm(D_BASE, L, 10, None, None, 0, 0
 for scores, nG in scores_all:
 
     print(f'nG: {nG}')
-    utils.get_metrics(scores, LTE_cross, 0.5, 1, 1)
+    utils.get_metrics(scores, L, 0.2, 1, 1, print_err= True)
+    utils.get_metrics(scores, L, 0.5, 1, 1, print_err= True)
+    utils.get_metrics(scores, L, 0.8, 1, 1, print_err= True)
 
 ##
     
@@ -91,7 +101,9 @@ LTE_cross, scores_all = gmm.cross_validation_gmm(D_BASE, L, 10, None, [pre.PCA, 
 for scores, nG in scores_all:
 
     print(f'nG: {nG}')
-    utils.get_metrics(scores, LTE_cross, 0.5, 1, 1)
+    utils.get_metrics(scores, L, 0.2, 1, 1, print_err= True)
+    utils.get_metrics(scores, L, 0.5, 1, 1, print_err= True)
+    utils.get_metrics(scores, L, 0.8, 1, 1, print_err= True)
 
 ##
     
@@ -101,7 +113,9 @@ LTE_cross, scores_all = gmm.cross_validation_gmm(D_BASE, L, 10, pre.Gaussianizer
 for scores, nG in scores_all:
 
     print(f'nG: {nG}')
-    utils.get_metrics(scores, LTE_cross, 0.5, 1, 1)
+    utils.get_metrics(scores, L, 0.2, 1, 1, print_err= True)
+    utils.get_metrics(scores, L, 0.5, 1, 1, print_err= True)
+    utils.get_metrics(scores, L, 0.8, 1, 1, print_err= True)
 
 ##
     
@@ -111,7 +125,9 @@ LTE_cross, scores_all = gmm.cross_validation_gmm(D_BASE, L, 10, pre.Gaussianizer
 for scores, nG in scores_all:
 
     print(f'nG: {nG}')
-    utils.get_metrics(scores, LTE_cross, 0.5, 1, 1)
+    utils.get_metrics(scores, L, 0.2, 1, 1, print_err= True)
+    utils.get_metrics(scores, L, 0.5, 1, 1, print_err= True)
+    utils.get_metrics(scores, L, 0.8, 1, 1, print_err= True)
 
 ##
     
