@@ -119,18 +119,20 @@ def ROCcurve(llr, labels, p1, Cfp, Cfn):
     plt.title('ROC')
     plt.show()
 
-def DETcurve(llr, labels, p1, Cfp, Cfn):
+def DETcurve(llr, labels, p1, Cfp, Cfn, stack= False):
     TPRs, TNRs, FPRs, FNRs, nDCFs = getMinNormDCF(llr, labels, p1, Cfp, Cfn, retRatios= True)
 
-    plt.figure()
-    plt.plot(FPRs, FNRs, label= 'p1: ' + str(p1) + ' Cfp: ' + str(Cfp) + ' Cfn: ' + str(Cfn))
-    plt.xticks(np.arange(0., 1.1, 0.1))
-    plt.yticks(np.arange(0., 1.1, 0.1))
-    plt.grid()
-    plt.title('DET')
-    plt.show()
+    if stack: plt.plot(FPRs, FNRs, label= 'p1: ' + str(p1) + ' Cfp: ' + str(Cfp) + ' Cfn: ' + str(Cfn))
+    else:
+        plt.figure()
+        plt.plot(FPRs, FNRs, label= 'p1: ' + str(p1) + ' Cfp: ' + str(Cfp) + ' Cfn: ' + str(Cfn))
+        plt.xticks(np.arange(0., 1.1, 0.1))
+        plt.yticks(np.arange(0., 1.1, 0.1))
+        plt.grid()
+        plt.title('DET')
+        plt.show()
 
-def BayesErrorPlot(llr, labels, effPriorLogOdds, legend_text= '', stack= False):
+def BayesErrorPlot(llr, labels, effPriorLogOdds, legend_text= '', stack= False, plot_log_odds= False):
     effPriors = 1 / (1 + np.exp(-effPriorLogOdds))
     DCFs_eff = []
     minDCFs_eff = []
@@ -142,11 +144,19 @@ def BayesErrorPlot(llr, labels, effPriorLogOdds, legend_text= '', stack= False):
 
     if not stack:
         plt.figure()
-        plt.plot(effPriors, DCFs_eff, label='DCF  ' + legend_text)
-        plt.plot(effPriors, minDCFs_eff, label='min DCF  ' + legend_text)
+        if plot_log_odds:
+            plt.plot(effPriorLogOdds, DCFs_eff, label='DCF  ' + legend_text)
+            plt.plot(effPriorLogOdds, minDCFs_eff, label='min DCF  ' + legend_text)
+        else:
+            plt.plot(effPriors, DCFs_eff, label='DCF  ' + legend_text)
+            plt.plot(effPriors, minDCFs_eff, label='min DCF  ' + legend_text)
         plt.grid()
         plt.legend()
         plt.show()
     else:
-        plt.plot(effPriors, DCFs_eff, label='DCF  ' + legend_text)
-        plt.plot(effPriors, minDCFs_eff, label='min DCF  ' + legend_text)
+        if plot_log_odds:
+            plt.plot(effPriorLogOdds, DCFs_eff, label='DCF  ' + legend_text)
+            plt.plot(effPriorLogOdds, minDCFs_eff, label='min DCF  ' + legend_text)
+        else:
+            plt.plot(effPriors, DCFs_eff, label='DCF  ' + legend_text)
+            plt.plot(effPriors, minDCFs_eff, label='min DCF  ' + legend_text)

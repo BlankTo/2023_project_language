@@ -17,67 +17,67 @@ M_BASE, NTR = D_BASE.shape
 
 DTR_base, LTR, DTE_base, LTE = utils.shuffle_and_divide(D_BASE, L, 2/3)
 
-scores_all = gmm.GMMClassifier(DTR_base, LTR, 0.1, [64], retAll= True, bound= 0.01, variant= '').getScores_all(DTE_base)
-
-for scores, nG in scores_all:
-
-    print(f'nG: {nG}')
-
-    utils.get_metrics(scores, LTE, 0.2, 1, 1, print_err= True)
-    utils.get_metrics(scores, LTE, 0.5, 1, 1, print_err= True)
-    utils.get_metrics(scores, LTE, 0.8, 1, 1, print_err= True)
-
-##
-
-pca = pre.PCA(DTR_base)
-DTR = pca.transform(DTR_base, 5)
-DTE = pca.transform(DTE_base, 5)
-
-scores_all = gmm.GMMClassifier(DTR, LTR, 0.1, [64], retAll= True, bound= 0.01, variant= '').getScores_all(DTE)
-
-for scores, nG in scores_all:
-
-    print(f'nG: {nG}')
-
-    utils.get_metrics(scores, LTE, 0.2, 1, 1, print_err= True)
-    utils.get_metrics(scores, LTE, 0.5, 1, 1, print_err= True)
-    utils.get_metrics(scores, LTE, 0.8, 1, 1, print_err= True)
-
-##
-
-gauss = pre.Gaussianizer(DTR_base, LTR)
-DTR = gauss.transform(DTR_base)
-DTE = gauss.transform(DTE_base)
-
-scores_all = gmm.GMMClassifier(DTR, LTR, 0.1, [64], retAll= True, bound= 0.01, variant= '').getScores_all(DTE)
-
-for scores, nG in scores_all:
-
-    print(f'nG: {nG}')
-
-    utils.get_metrics(scores, LTE, 0.2, 1, 1, print_err= True)
-    utils.get_metrics(scores, LTE, 0.5, 1, 1, print_err= True)
-    utils.get_metrics(scores, LTE, 0.8, 1, 1, print_err= True)
-
-##
-
-gauss = pre.Gaussianizer(DTR_base, LTR)
-DTR = gauss.transform(DTR_base)
-DTE = gauss.transform(DTE_base)
-
-pca = pre.PCA(DTR)
-DTR = pca.transform(DTR, 5)
-DTE = pca.transform(DTE, 5)
-
-scores_all = gmm.GMMClassifier(DTR, LTR, 0.1, [64], retAll= True, bound= 0.01, variant= '').getScores_all(DTE)
-
-for scores, nG in scores_all:
-
-    print(f'nG: {nG}')
-
-    utils.get_metrics(scores, LTE, 0.2, 1, 1, print_err= True)
-    utils.get_metrics(scores, LTE, 0.5, 1, 1, print_err= True)
-    utils.get_metrics(scores, LTE, 0.8, 1, 1, print_err= True)
+#scores_all = gmm.GMMClassifier(DTR_base, LTR, 0.1, [64], retAll= True, bound= 0.01, variant= '').getScores_all(DTE_base)
+#
+#for scores, nG in scores_all:
+#
+#    print(f'nG: {nG}')
+#
+#    utils.get_metrics(scores, LTE, 0.2, 1, 1, print_err= True)
+#    utils.get_metrics(scores, LTE, 0.5, 1, 1, print_err= True)
+#    utils.get_metrics(scores, LTE, 0.8, 1, 1, print_err= True)
+#
+###
+#
+#pca = pre.PCA(DTR_base)
+#DTR = pca.transform(DTR_base, 5)
+#DTE = pca.transform(DTE_base, 5)
+#
+#scores_all = gmm.GMMClassifier(DTR, LTR, 0.1, [64], retAll= True, bound= 0.01, variant= '').getScores_all(DTE)
+#
+#for scores, nG in scores_all:
+#
+#    print(f'nG: {nG}')
+#
+#    utils.get_metrics(scores, LTE, 0.2, 1, 1, print_err= True)
+#    utils.get_metrics(scores, LTE, 0.5, 1, 1, print_err= True)
+#    utils.get_metrics(scores, LTE, 0.8, 1, 1, print_err= True)
+#
+###
+#
+#gauss = pre.Gaussianizer(DTR_base, LTR)
+#DTR = gauss.transform(DTR_base)
+#DTE = gauss.transform(DTE_base)
+#
+#scores_all = gmm.GMMClassifier(DTR, LTR, 0.1, [64], retAll= True, bound= 0.01, variant= '').getScores_all(DTE)
+#
+#for scores, nG in scores_all:
+#
+#    print(f'nG: {nG}')
+#
+#    utils.get_metrics(scores, LTE, 0.2, 1, 1, print_err= True)
+#    utils.get_metrics(scores, LTE, 0.5, 1, 1, print_err= True)
+#    utils.get_metrics(scores, LTE, 0.8, 1, 1, print_err= True)
+#
+###
+#
+#gauss = pre.Gaussianizer(DTR_base, LTR)
+#DTR = gauss.transform(DTR_base)
+#DTE = gauss.transform(DTE_base)
+#
+#pca = pre.PCA(DTR)
+#DTR = pca.transform(DTR, 5)
+#DTE = pca.transform(DTE, 5)
+#
+#scores_all = gmm.GMMClassifier(DTR, LTR, 0.1, [64], retAll= True, bound= 0.01, variant= '').getScores_all(DTE)
+#
+#for scores, nG in scores_all:
+#
+#    print(f'nG: {nG}')
+#
+#    utils.get_metrics(scores, LTE, 0.2, 1, 1, print_err= True)
+#    utils.get_metrics(scores, LTE, 0.5, 1, 1, print_err= True)
+#    utils.get_metrics(scores, LTE, 0.8, 1, 1, print_err= True)
 
 ######
     # cross val
@@ -89,9 +89,9 @@ LTE_cross, scores_all = gmm.cross_validation_gmm(D_BASE, L, 10, None, None, 0, 0
 for scores, nG in scores_all:
 
     print(f'nG: {nG}')
-    utils.get_metrics(scores, L, 0.2, 1, 1, print_err= True)
-    utils.get_metrics(scores, L, 0.5, 1, 1, print_err= True)
-    utils.get_metrics(scores, L, 0.8, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE_cross, 0.2, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE_cross, 0.5, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE_cross, 0.8, 1, 1, print_err= True)
 
 ##
     
@@ -101,9 +101,9 @@ LTE_cross, scores_all = gmm.cross_validation_gmm(D_BASE, L, 10, None, [pre.PCA, 
 for scores, nG in scores_all:
 
     print(f'nG: {nG}')
-    utils.get_metrics(scores, L, 0.2, 1, 1, print_err= True)
-    utils.get_metrics(scores, L, 0.5, 1, 1, print_err= True)
-    utils.get_metrics(scores, L, 0.8, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE_cross, 0.2, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE_cross, 0.5, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE_cross, 0.8, 1, 1, print_err= True)
 
 ##
     
@@ -113,9 +113,9 @@ LTE_cross, scores_all = gmm.cross_validation_gmm(D_BASE, L, 10, pre.Gaussianizer
 for scores, nG in scores_all:
 
     print(f'nG: {nG}')
-    utils.get_metrics(scores, L, 0.2, 1, 1, print_err= True)
-    utils.get_metrics(scores, L, 0.5, 1, 1, print_err= True)
-    utils.get_metrics(scores, L, 0.8, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE_cross, 0.2, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE_cross, 0.5, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE_cross, 0.8, 1, 1, print_err= True)
 
 ##
     
@@ -125,9 +125,9 @@ LTE_cross, scores_all = gmm.cross_validation_gmm(D_BASE, L, 10, pre.Gaussianizer
 for scores, nG in scores_all:
 
     print(f'nG: {nG}')
-    utils.get_metrics(scores, L, 0.2, 1, 1, print_err= True)
-    utils.get_metrics(scores, L, 0.5, 1, 1, print_err= True)
-    utils.get_metrics(scores, L, 0.8, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE_cross, 0.2, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE_cross, 0.5, 1, 1, print_err= True)
+    utils.get_metrics(scores, LTE_cross, 0.8, 1, 1, print_err= True)
 
 ##
     

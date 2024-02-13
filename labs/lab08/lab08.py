@@ -215,15 +215,15 @@ utils.get_metrics(llr_eps1, labels_infpar_eps1, p1, Cfp, Cfn)
 print('\n--------------------\n--------------------\n--------------------')
 
 
-#effPriorLogOdds = np.linspace(-3, 3, 21)
-#plt.figure()
-#BayesErrorPlot(llr, labels_infpar, effPriorLogOdds, legend_text= 'eps0.001', stack= True)
-#BayesErrorPlot(llr_eps1, labels_infpar_eps1, effPriorLogOdds, legend_text= 'eps1.', stack= True)
-#plt.ylim([0, 1.1])
-#plt.xlim([-3, 3])
-#plt.grid()
-#plt.legend()
-#plt.show()
+effPriorLogOdds = np.linspace(-3, 3, 21)
+plt.figure()
+BayesErrorPlot(llr, labels_infpar, effPriorLogOdds, legend_text= 'eps0.001', stack= True, plot_log_odds= True)
+BayesErrorPlot(llr_eps1, labels_infpar_eps1, effPriorLogOdds, legend_text= 'eps1.', stack= True, plot_log_odds= True)
+plt.ylim([0, 1.1])
+plt.xlim([-3, 3])
+plt.grid()
+plt.legend()
+plt.show()
 
 ###################################
 ###################################
