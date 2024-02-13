@@ -109,15 +109,26 @@ def plotSparse(D, L, axp= False, label_dict= False, attr_names= False, title= ''
 
 
 def ROCcurve(llr, labels, p1, Cfp, Cfn):
-    _, PRs = getMinNormDCF(llr, labels, p1, Cfp, Cfn, retPR= True)
+    TPRs, TNRs, FPRs, FNRs, nDCFs = getMinNormDCF(llr, labels, p1, Cfp, Cfn, retRatios= True)
 
     plt.figure()
-    plt.plot(PRs[0], PRs[1], label= 'p1: ' + str(p1) + ' Cfp: ' + str(Cfp) + ' Cfn: ' + str(Cfn))
+    plt.plot(FPRs, TPRs, label= 'p1: ' + str(p1) + ' Cfp: ' + str(Cfp) + ' Cfn: ' + str(Cfn))
     plt.xticks(np.arange(0., 1.1, 0.1))
     plt.yticks(np.arange(0., 1.1, 0.1))
     plt.grid()
+    plt.title('ROC')
     plt.show()
 
+def DETcurve(llr, labels, p1, Cfp, Cfn):
+    TPRs, TNRs, FPRs, FNRs, nDCFs = getMinNormDCF(llr, labels, p1, Cfp, Cfn, retRatios= True)
+
+    plt.figure()
+    plt.plot(FPRs, FNRs, label= 'p1: ' + str(p1) + ' Cfp: ' + str(Cfp) + ' Cfn: ' + str(Cfn))
+    plt.xticks(np.arange(0., 1.1, 0.1))
+    plt.yticks(np.arange(0., 1.1, 0.1))
+    plt.grid()
+    plt.title('DET')
+    plt.show()
 
 def BayesErrorPlot(llr, labels, effPriorLogOdds, legend_text= '', stack= False):
     effPriors = 1 / (1 + np.exp(-effPriorLogOdds))
@@ -131,13 +142,11 @@ def BayesErrorPlot(llr, labels, effPriorLogOdds, legend_text= '', stack= False):
 
     if not stack:
         plt.figure()
-        plt.plot(effPriorLogOdds, DCFs_eff, label='DCF  ' + legend_text)
-        plt.plot(effPriorLogOdds, minDCFs_eff, label='min DCF  ' + legend_text)
-        plt.ylim([0, 1.1])
-        plt.xlim([-3, 3])
+        plt.plot(effPriors, DCFs_eff, label='DCF  ' + legend_text)
+        plt.plot(effPriors, minDCFs_eff, label='min DCF  ' + legend_text)
         plt.grid()
         plt.legend()
         plt.show()
     else:
-        plt.plot(effPriorLogOdds, DCFs_eff, label='DCF  ' + legend_text)
-        plt.plot(effPriorLogOdds, minDCFs_eff, label='min DCF  ' + legend_text)
+        plt.plot(effPriors, DCFs_eff, label='DCF  ' + legend_text)
+        plt.plot(effPriors, minDCFs_eff, label='min DCF  ' + legend_text)

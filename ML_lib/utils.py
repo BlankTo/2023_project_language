@@ -119,24 +119,36 @@ def empiricalBayesRisk(p1, Cfp, Cfn, FPR, FNR): return p1 * Cfn * FNR + (1 - p1)
 
 def normalizedDCF(p1, Cfp, Cfn, FPR, FNR): return empiricalBayesRisk(p1, Cfp, Cfn, FPR, FNR) / min(p1*Cfn, (1-p1)*Cfp)
 
-def getMinNormDCF(scores_in, labels_in, p1, Cfp, Cfn):
+def getMinNormDCF(scores_in, labels_in, p1, Cfp, Cfn, retRatios= False):
     N = scores_in.shape[0]
     idx = np.argsort(scores_in)
     scores = scores_in.copy()[idx]
     labels = labels_in.copy()[idx]
     minDCF = 1000
 
+    TPRs, TNRs, FPRs, FNRs, nDCFs = [], [], [], [], []
+
     for i in range(scores.shape[0]):
 
         predictions = np.concatenate([np.zeros(i), np.ones(N-i)])
 
+        TNR = (predictions[labels==0]==0).sum() / (labels==0).sum()
+        TPR = (predictions[labels==1]==1).sum() / (labels==1).sum()
         FNR = (predictions[labels==1]==0).sum() / (labels==1).sum()
         FPR = (predictions[labels==0]==1).sum() / (labels==0).sum()
 
+        TPRs.append(TPR)
+        TNRs.append(TNR)
+        FNRs.append(FNR)
+        FPRs.append(FPR)
+
         nDCF = normalizedDCF(p1, Cfp, Cfn, FPR, FNR)
+
+        nDCFs.append(nDCF)
 
         if nDCF < minDCF: minDCF = nDCF
 
+    if retRatios: return TPRs, TNRs, FPRs, FNRs, nDCFs
     return minDCF
 
 
