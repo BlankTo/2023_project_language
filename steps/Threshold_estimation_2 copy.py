@@ -35,19 +35,13 @@ print(f'Quad LogReg nDCF(0.8): {utils.get_metrics(scores_quad_log_reg_1, LTE_cro
 minDCF, best_threshold_quad_log_reg_1_02 = utils.getMinNormDCF(scores_quad_log_reg_1, LTE_cross_quad_log_reg_1, 0.2, 1, 1, retThreshold= True)
 print(f'Quad LogReg best_threshold(0.2): {best_threshold_quad_log_reg_1_02} - minDCF(0.2): {minDCF}')
 utils.get_metrics_threshold(scores_quad_log_reg_1, LTE_cross_quad_log_reg_1, best_threshold_quad_log_reg_1_02, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_quad_log_reg_1, LTE_cross_quad_log_reg_1, best_threshold_quad_log_reg_1_02, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_quad_log_reg_1, LTE_cross_quad_log_reg_1, best_threshold_quad_log_reg_1_02, 0.8, 1, 1)
 
 minDCF, best_threshold_quad_log_reg_1_05 = utils.getMinNormDCF(scores_quad_log_reg_1, LTE_cross_quad_log_reg_1, 0.5, 1, 1, retThreshold= True)
 print(f'Quad LogReg best_threshold(0.5): {best_threshold_quad_log_reg_1_05} - minDCF(0.5): {minDCF}')
-utils.get_metrics_threshold(scores_quad_log_reg_1, LTE_cross_quad_log_reg_1, best_threshold_quad_log_reg_1_05, 0.2, 1, 1)
 utils.get_metrics_threshold(scores_quad_log_reg_1, LTE_cross_quad_log_reg_1, best_threshold_quad_log_reg_1_05, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_quad_log_reg_1, LTE_cross_quad_log_reg_1, best_threshold_quad_log_reg_1_05, 0.8, 1, 1)
 
 minDCF, best_threshold_quad_log_reg_1_08 = utils.getMinNormDCF(scores_quad_log_reg_1, LTE_cross_quad_log_reg_1, 0.8, 1, 1, retThreshold= True)
 print(f'Quad LogReg best_threshold(0.8): {best_threshold_quad_log_reg_1_08} - minDCF(0.8): {minDCF}')
-utils.get_metrics_threshold(scores_quad_log_reg_1, LTE_cross_quad_log_reg_1, best_threshold_quad_log_reg_1_08, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_quad_log_reg_1, LTE_cross_quad_log_reg_1, best_threshold_quad_log_reg_1_08, 0.5, 1, 1)
 utils.get_metrics_threshold(scores_quad_log_reg_1, LTE_cross_quad_log_reg_1, best_threshold_quad_log_reg_1_08, 0.8, 1, 1)
 
 #
@@ -66,19 +60,13 @@ print(f'Quad LogReg nDCF(0.8): {utils.get_metrics(scores_quad_log_reg_2, LTE_cro
 minDCF, best_threshold_quad_log_reg_2_02 = utils.getMinNormDCF(scores_quad_log_reg_2, LTE_cross_quad_log_reg_2, 0.2, 1, 1, retThreshold= True)
 print(f'Quad LogReg best_threshold(0.2): {best_threshold_quad_log_reg_2_02} - minDCF(0.2): {minDCF}')
 utils.get_metrics_threshold(scores_quad_log_reg_2, LTE_cross_quad_log_reg_2, best_threshold_quad_log_reg_2_02, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_quad_log_reg_2, LTE_cross_quad_log_reg_2, best_threshold_quad_log_reg_2_02, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_quad_log_reg_2, LTE_cross_quad_log_reg_2, best_threshold_quad_log_reg_2_02, 0.8, 1, 1)
 
 minDCF, best_threshold_quad_log_reg_2_05 = utils.getMinNormDCF(scores_quad_log_reg_2, LTE_cross_quad_log_reg_2, 0.5, 1, 1, retThreshold= True)
 print(f'Quad LogReg best_threshold(0.5): {best_threshold_quad_log_reg_2_05} - minDCF(0.5): {minDCF}')
-utils.get_metrics_threshold(scores_quad_log_reg_2, LTE_cross_quad_log_reg_2, best_threshold_quad_log_reg_2_05, 0.2, 1, 1)
 utils.get_metrics_threshold(scores_quad_log_reg_2, LTE_cross_quad_log_reg_2, best_threshold_quad_log_reg_2_05, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_quad_log_reg_2, LTE_cross_quad_log_reg_2, best_threshold_quad_log_reg_2_05, 0.8, 1, 1)
 
 minDCF, best_threshold_quad_log_reg_2_08 = utils.getMinNormDCF(scores_quad_log_reg_2, LTE_cross_quad_log_reg_2, 0.8, 1, 1, retThreshold= True)
 print(f'Quad LogReg best_threshold(0.8): {best_threshold_quad_log_reg_2_08} - minDCF(0.8): {minDCF}')
-utils.get_metrics_threshold(scores_quad_log_reg_2, LTE_cross_quad_log_reg_2, best_threshold_quad_log_reg_2_08, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_quad_log_reg_2, LTE_cross_quad_log_reg_2, best_threshold_quad_log_reg_2_08, 0.5, 1, 1)
 utils.get_metrics_threshold(scores_quad_log_reg_2, LTE_cross_quad_log_reg_2, best_threshold_quad_log_reg_1_08, 0.8, 1, 1)
 
 #
@@ -99,19 +87,13 @@ print(f'POLY 2 SVM nDCF(0.8): {utils.get_metrics(scores_poly2, LTE_cross_poly2, 
 minDCF, best_threshold_poly2_02 = utils.getMinNormDCF(scores_poly2, LTE_cross_poly2, 0.2, 1, 1, retThreshold= True)
 print(f'Poly 2 SVM best_threshold(0.2): {best_threshold_poly2_02} - minDCF(0.2): {minDCF}')
 utils.get_metrics_threshold(scores_poly2, LTE_cross_poly2, best_threshold_poly2_02, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_poly2, LTE_cross_poly2, best_threshold_poly2_02, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_poly2, LTE_cross_poly2, best_threshold_poly2_02, 0.8, 1, 1)
 
 minDCF, best_threshold_poly2_05 = utils.getMinNormDCF(scores_poly2, LTE_cross_poly2, 0.5, 1, 1, retThreshold= True)
 print(f'Poly 2 SVM best_threshold(0.5): {best_threshold_poly2_05} - minDCF(0.5): {minDCF}')
-utils.get_metrics_threshold(scores_poly2, LTE_cross_poly2, best_threshold_poly2_05, 0.2, 1, 1)
 utils.get_metrics_threshold(scores_poly2, LTE_cross_poly2, best_threshold_poly2_05, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_poly2, LTE_cross_poly2, best_threshold_poly2_05, 0.8, 1, 1)
 
 minDCF, best_threshold_poly2_08 = utils.getMinNormDCF(scores_poly2, LTE_cross_poly2, 0.8, 1, 1, retThreshold= True)
 print(f'Poly 2 SVM best_threshold(0.8): {best_threshold_poly2_08} - minDCF(0.8): {minDCF}')
-utils.get_metrics_threshold(scores_poly2, LTE_cross_poly2, best_threshold_poly2_08, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_poly2, LTE_cross_poly2, best_threshold_poly2_08, 0.5, 1, 1)
 utils.get_metrics_threshold(scores_poly2, LTE_cross_poly2, best_threshold_poly2_08, 0.8, 1, 1)
 
 #
@@ -132,19 +114,13 @@ print(f'RBF SVM nDCF(0.8): {utils.get_metrics(scores_rbf_1, LTE_cross_rbf_1, 0.8
 minDCF, best_threshold_rbf_1_02 = utils.getMinNormDCF(scores_rbf_1, LTE_cross_rbf_1, 0.2, 1, 1, retThreshold= True)
 print(f'RBF SVM best_threshold(0.2): {best_threshold_rbf_1_02} - minDCF(0.2): {minDCF}')
 utils.get_metrics_threshold(scores_rbf_1, LTE_cross_rbf_1, best_threshold_rbf_1_02, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_rbf_1, LTE_cross_rbf_1, best_threshold_rbf_1_02, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_rbf_1, LTE_cross_rbf_1, best_threshold_rbf_1_02, 0.8, 1, 1)
 
 minDCF, best_threshold_rbf_1_05 = utils.getMinNormDCF(scores_rbf_1, LTE_cross_rbf_1, 0.5, 1, 1, retThreshold= True)
 print(f'RBF SVM best_threshold(0.5): {best_threshold_rbf_1_05} - minDCF(0.5): {minDCF}')
-utils.get_metrics_threshold(scores_rbf_1, LTE_cross_rbf_1, best_threshold_rbf_1_05, 0.2, 1, 1)
 utils.get_metrics_threshold(scores_rbf_1, LTE_cross_rbf_1, best_threshold_rbf_1_05, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_rbf_1, LTE_cross_rbf_1, best_threshold_rbf_1_05, 0.8, 1, 1)
 
 minDCF, best_threshold_rbf_1_08 = utils.getMinNormDCF(scores_rbf_1, LTE_cross_rbf_1, 0.8, 1, 1, retThreshold= True)
 print(f'RBF SVM best_threshold(0.8): {best_threshold_rbf_1_08} - minDCF(0.8): {minDCF}')
-utils.get_metrics_threshold(scores_rbf_1, LTE_cross_rbf_1, best_threshold_rbf_1_08, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_rbf_1, LTE_cross_rbf_1, best_threshold_rbf_1_08, 0.5, 1, 1)
 utils.get_metrics_threshold(scores_rbf_1, LTE_cross_rbf_1, best_threshold_rbf_1_08, 0.8, 1, 1)
 
 #
@@ -165,19 +141,13 @@ print(f'RBF SVM nDCF(0.8): {utils.get_metrics(scores_rbf_2, LTE_cross_rbf_2, 0.8
 minDCF, best_threshold_rbf_2_02 = utils.getMinNormDCF(scores_rbf_2, LTE_cross_rbf_2, 0.2, 1, 1, retThreshold= True)
 print(f'RBF SVM best_threshold(0.2): {best_threshold_rbf_2_02} - minDCF(0.2): {minDCF}')
 utils.get_metrics_threshold(scores_rbf_2, LTE_cross_rbf_2, best_threshold_rbf_2_02, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_rbf_2, LTE_cross_rbf_2, best_threshold_rbf_2_02, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_rbf_2, LTE_cross_rbf_2, best_threshold_rbf_2_02, 0.8, 1, 1)
 
 minDCF, best_threshold_rbf_2_05 = utils.getMinNormDCF(scores_rbf_2, LTE_cross_rbf_2, 0.5, 1, 1, retThreshold= True)
 print(f'RBF SVM best_threshold(0.5): {best_threshold_rbf_2_05} - minDCF(0.5): {minDCF}')
-utils.get_metrics_threshold(scores_rbf_2, LTE_cross_rbf_2, best_threshold_rbf_2_05, 0.2, 1, 1)
 utils.get_metrics_threshold(scores_rbf_2, LTE_cross_rbf_2, best_threshold_rbf_2_05, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_rbf_2, LTE_cross_rbf_2, best_threshold_rbf_2_05, 0.8, 1, 1)
 
 minDCF, best_threshold_rbf_2_08 = utils.getMinNormDCF(scores_rbf_2, LTE_cross_rbf_2, 0.8, 1, 1, retThreshold= True)
 print(f'RBF SVM best_threshold(0.8): {best_threshold_rbf_2_08} - minDCF(0.8): {minDCF}')
-utils.get_metrics_threshold(scores_rbf_2, LTE_cross_rbf_2, best_threshold_rbf_2_08, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_rbf_2, LTE_cross_rbf_2, best_threshold_rbf_2_08, 0.5, 1, 1)
 utils.get_metrics_threshold(scores_rbf_2, LTE_cross_rbf_2, best_threshold_rbf_2_08, 0.8, 1, 1)
 
 #
@@ -195,19 +165,13 @@ print(f'GMM nDCF(0.8): {utils.get_metrics(scores_gmm, LTE_cross_gmm, 0.8, 1, 1, 
 minDCF, best_threshold_gmm_02 = utils.getMinNormDCF(scores_gmm, LTE_cross_gmm, 0.2, 1, 1, retThreshold= True)
 print(f'GMM best_threshold(0.2): {best_threshold_gmm_02} - minDCF(0.2): {minDCF}')
 utils.get_metrics_threshold(scores_gmm, LTE_cross_gmm, best_threshold_gmm_02, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_gmm, LTE_cross_gmm, best_threshold_gmm_02, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_gmm, LTE_cross_gmm, best_threshold_gmm_02, 0.8, 1, 1)
 
 minDCF, best_threshold_gmm_05 = utils.getMinNormDCF(scores_gmm, LTE_cross_gmm, 0.5, 1, 1, retThreshold= True)
 print(f'GMM best_threshold(0.5): {best_threshold_gmm_05} - minDCF(0.5): {minDCF}')
-utils.get_metrics_threshold(scores_gmm, LTE_cross_gmm, best_threshold_gmm_05, 0.2, 1, 1)
 utils.get_metrics_threshold(scores_gmm, LTE_cross_gmm, best_threshold_gmm_05, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_gmm, LTE_cross_gmm, best_threshold_gmm_05, 0.8, 1, 1)
 
 minDCF, best_threshold_gmm_08 = utils.getMinNormDCF(scores_gmm, LTE_cross_gmm, 0.8, 1, 1, retThreshold= True)
 print(f'GMM best_threshold(0.8): {best_threshold_gmm_08} - minDCF(0.8): {minDCF}')
-utils.get_metrics_threshold(scores_gmm, LTE_cross_gmm, best_threshold_gmm_08, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_gmm, LTE_cross_gmm, best_threshold_gmm_08, 0.5, 1, 1)
 utils.get_metrics_threshold(scores_gmm, LTE_cross_gmm, best_threshold_gmm_08, 0.8, 1, 1)
 
 #
@@ -225,19 +189,13 @@ print(f'GMM nDCF(0.8): {utils.get_metrics(scores_gmm_tied, LTE_cross_gmm_tied, 0
 minDCF, best_threshold_gmm_tied_02 = utils.getMinNormDCF(scores_gmm_tied, LTE_cross_gmm_tied, 0.2, 1, 1, retThreshold= True)
 print(f'GMM best_threshold(0.2): {best_threshold_gmm_tied_02} - minDCF(0.2): {minDCF}')
 utils.get_metrics_threshold(scores_gmm_tied, LTE_cross_gmm_tied, best_threshold_gmm_tied_02, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_gmm_tied, LTE_cross_gmm_tied, best_threshold_gmm_tied_02, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_gmm_tied, LTE_cross_gmm_tied, best_threshold_gmm_tied_02, 0.8, 1, 1)
 
 minDCF, best_threshold_gmm_tied_05 = utils.getMinNormDCF(scores_gmm_tied, LTE_cross_gmm_tied, 0.5, 1, 1, retThreshold= True)
 print(f'GMM best_threshold(0.5): {best_threshold_gmm_tied_05} - minDCF(0.5): {minDCF}')
-utils.get_metrics_threshold(scores_gmm_tied, LTE_cross_gmm_tied, best_threshold_gmm_tied_05, 0.2, 1, 1)
 utils.get_metrics_threshold(scores_gmm_tied, LTE_cross_gmm_tied, best_threshold_gmm_tied_05, 0.5, 1, 1)
-utils.get_metrics_threshold(scores_gmm_tied, LTE_cross_gmm_tied, best_threshold_gmm_tied_05, 0.8, 1, 1)
 
 minDCF, best_threshold_gmm_tied_08 = utils.getMinNormDCF(scores_gmm_tied, LTE_cross_gmm_tied, 0.8, 1, 1, retThreshold= True)
 print(f'GMM best_threshold(0.8): {best_threshold_gmm_tied_08} - minDCF(0.8): {minDCF}')
-utils.get_metrics_threshold(scores_gmm_tied, LTE_cross_gmm_tied, best_threshold_gmm_tied_08, 0.2, 1, 1)
-utils.get_metrics_threshold(scores_gmm_tied, LTE_cross_gmm_tied, best_threshold_gmm_tied_08, 0.5, 1, 1)
 utils.get_metrics_threshold(scores_gmm_tied, LTE_cross_gmm_tied, best_threshold_gmm_tied_08, 0.8, 1, 1)
 
 #####
