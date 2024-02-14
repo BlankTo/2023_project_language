@@ -24,7 +24,7 @@ for prior in [0.2, 0.5, 0.8]:
     res_08 = []
 
     exp_range = range(-6, -5)
-    lam_range = [0]# + [10 ** lam_exp for lam_exp in exp_range]
+    lam_range = [1]# + [10 ** lam_exp for lam_exp in exp_range]
 
     for lam in lam_range:
 
@@ -67,7 +67,7 @@ for prior in [0.2, 0.5, 0.8]:
     res_08 = []
 
     exp_range = range(-6, -5)
-    lam_range = [0]# + [10 ** lam_exp for lam_exp in exp_range]
+    lam_range = [1]# + [10 ** lam_exp for lam_exp in exp_range]
 
     for lam in lam_range:
 
@@ -110,7 +110,7 @@ for prior in [0.2, 0.5, 0.8]:
     res_08 = []
 
     exp_range = range(-6, -5)
-    lam_range = [0]# + [10 ** lam_exp for lam_exp in exp_range]
+    lam_range = [1]# + [10 ** lam_exp for lam_exp in exp_range]
 
     for lam in lam_range:
 
@@ -157,7 +157,7 @@ for prior in [0.2, 0.5, 0.8]:
     res_08 = []
 
     exp_range = range(-6, -5)
-    lam_range = [0]# + [10 ** lam_exp for lam_exp in exp_range]
+    lam_range = [1]# + [10 ** lam_exp for lam_exp in exp_range]
 
     for lam in lam_range:
 
@@ -198,7 +198,7 @@ for prior in [0.2, 0.5, 0.8]:
     res_08 = []
 
     exp_range = range(-6, -5)
-    lam_range = [0]# + [10 ** lam_exp for lam_exp in exp_range]
+    lam_range = [1]# + [10 ** lam_exp for lam_exp in exp_range]
 
     for lam in lam_range:
 
@@ -238,7 +238,7 @@ for prior in [0.2, 0.5, 0.8]:
     res_08 = []
 
     exp_range = range(-6, -5)
-    lam_range = [0]# + [10 ** lam_exp for lam_exp in exp_range]
+    lam_range = [1]# + [10 ** lam_exp for lam_exp in exp_range]
 
     for lam in lam_range:
 
@@ -278,7 +278,7 @@ for prior in [0.2, 0.5, 0.8]:
     res_08 = []
 
     exp_range = range(-6, -5)
-    lam_range = [0]# + [10 ** lam_exp for lam_exp in exp_range]
+    lam_range = [1]# + [10 ** lam_exp for lam_exp in exp_range]
 
     for lam in lam_range:
 
@@ -318,7 +318,7 @@ for prior in [0.2, 0.5, 0.8]:
     res_08 = []
 
     exp_range = range(-6, -5)
-    lam_range = [0]# + [10 ** lam_exp for lam_exp in exp_range]
+    lam_range = [1]# + [10 ** lam_exp for lam_exp in exp_range]
 
     for lam in lam_range:
 
