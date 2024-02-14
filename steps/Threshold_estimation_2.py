@@ -10,7 +10,6 @@ import ML_lib.svm as svm
 import ML_lib.gmm as gmm
 import ML_lib.utils as utils
 import ML_lib.preprocessing as pre
-import ML_lib.plot_lib as pltl
 
 D_BASE = np.load('data_npy\\DTR_language.npy')
 L = np.load('data_npy\\LTR_language.npy')
