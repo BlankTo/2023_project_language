@@ -20,17 +20,17 @@ print(LTR.shape)
 np.save('data_npy\\DTR_language', DTR)
 np.save('data_npy\\LTR_language', LTR)
 
-#DTE = []
-#LTE = []
-#with open('data_raw\\Test_language.txt', 'r') as f:
-#    for line in f:
-#        line_split = line.split(',')
-#        x = [float(xj) for xj in line_split[:-1]]
-#        DTE.append(line_split[:-1])
-#        LTE.append(int(line_split[-1]))
-#DTE = (np.array(DTE, dtype= np.float64)).T
-#LTE = np.array(LTE, dtype= int)
-#print(DTE.shape)
-#print(LTE.shape)
-#np.save('data_npy\\DTE_language', DTE)
-#np.save('data_npy\\LTE_language', LTE)
+DTE = []
+LTE = []
+with open('data_raw\\Test_language.txt', 'r') as f:
+    for line in f:
+        line_split = line.split(',')
+        x = [float(xj) for xj in line_split[:-1]]
+        DTE.append(line_split[:-1])
+        LTE.append(int(line_split[-1]))
+DTE = (np.array(DTE, dtype= np.float64)).T
+LTE = np.array(LTE, dtype= int)
+print(DTE.shape)
+print(LTE.shape)
+np.save('data_npy\\DTE_language', DTE)
+np.save('data_npy\\LTE_language', LTE)

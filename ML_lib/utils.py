@@ -119,12 +119,13 @@ def empiricalBayesRisk(p1, Cfp, Cfn, FPR, FNR): return p1 * Cfn * FNR + (1 - p1)
 
 def normalizedDCF(p1, Cfp, Cfn, FPR, FNR): return empiricalBayesRisk(p1, Cfp, Cfn, FPR, FNR) / min(p1*Cfn, (1-p1)*Cfp)
 
-def getMinNormDCF(scores_in, labels_in, p1, Cfp, Cfn, retRatios= False):
+def getMinNormDCF(scores_in, labels_in, p1, Cfp, Cfn, retRatios= False, retThreshold= False):
     N = scores_in.shape[0]
     idx = np.argsort(scores_in)
     scores = scores_in.copy()[idx]
     labels = labels_in.copy()[idx]
     minDCF = 1000
+    best_threshold = None
 
     TPRs, TNRs, FPRs, FNRs, nDCFs = [], [], [], [], []
 
@@ -146,9 +147,12 @@ def getMinNormDCF(scores_in, labels_in, p1, Cfp, Cfn, retRatios= False):
 
         nDCFs.append(nDCF)
 
-        if nDCF < minDCF: minDCF = nDCF
+        if nDCF < minDCF:
+            minDCF = nDCF
+            best_threshold = scores[i]
 
     if retRatios: return TPRs, TNRs, FPRs, FNRs, nDCFs
+    if retThreshold: return minDCF, best_threshold
     return minDCF
 
 
@@ -223,6 +227,24 @@ def cross_validation_base(D, L, classifier_class, n_folds= 10, prepro_class= Non
 def get_metrics(scores, labels, p1= 0.5, Cfp= 1, Cfn= 1, print_err= False, ret_all= False):
     
     assigned = (scores > getBayesThreshold(p1, Cfp, Cfn)).astype(int)
+
+    if print_err: error_rate = sum(assigned != labels) * 100 / scores.shape[0]
+
+    FNR = (assigned[labels==1]==0).sum() / (labels==1).sum()
+    FPR = (assigned[labels==0]==1).sum() / (labels==0).sum()
+
+    nDCF = normalizedDCF(p1, Cfp, Cfn, FPR, FNR)
+    minDCF = getMinNormDCF(scores, labels, p1, Cfp, Cfn)
+    
+    if print_err: print_string = str('normDCF(%.1f, %d, %d): %.3f  -  minNormDCF: %.3f  -  err: %.1f' % (p1, Cfp, Cfn, nDCF, minDCF, error_rate))
+    else: print_string = str('normDCF(%.1f, %d, %d): %.3f  -  minNormDCF: %.3f' % (p1, Cfp, Cfn, nDCF, minDCF))
+
+    if ret_all: return print_string, nDCF, minDCF, FPR, FNR
+    else: print(print_string)
+
+def get_metrics_threshold(scores, labels, threshold, p1= 0.5, Cfp= 1, Cfn= 1, print_err= False, ret_all= False):
+    
+    assigned = (scores > threshold).astype(int)
 
     if print_err: error_rate = sum(assigned != labels) * 100 / scores.shape[0]
 
