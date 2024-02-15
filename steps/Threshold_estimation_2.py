@@ -341,7 +341,7 @@ C = 1
 K = 0
 lam = 0.01
 
-scores = svm.SupportVectorMachine(DTR, LTR, K, C, svm.get_kernel_RBF(lam, K**2), None if prior is None else [1 - prior, prior]).getScores(DTE_gauss_pca)
+scores = svm.SupportVectorMachine(DTR_gauss_pca, LTR, K, C, svm.get_kernel_RBF(lam, K**2), None if prior is None else [1 - prior, prior]).getScores(DTE_gauss_pca)
 
 print(f'bayes threshold: {utils.getBayesThreshold(0.2, 1, 1)} - best_threshold: {best_threshold_rbf_1_02}')
 utils.get_metrics(scores, LTE, 0.2, 1, 1)
